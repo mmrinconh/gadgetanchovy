@@ -1,0 +1,13 @@
+; main file for gadget - created in Rgadget
+; WGTS/main.ldist.seine - Wed Mar 11 21:23:09 2015
+timefile time
+areafile area
+printfiles WGTS/printfile.ldist.seine
+[stock]
+stockfiles anch
+[tagging]
+[otherfood]
+[fleet]
+fleetfiles fleet
+[likelihood]
+likelihoodfiles WGTS/likelihood.ldist.seine

@@ -1,0 +1,26 @@
+; Likelihood file - created in Rgadget
+; WGTS/likelihood.ldist.seine - 2015-03-11
+[component]
+name		ldist.seine
+weight		781.25
+type		catchdistribution
+datafile		anch.lengthmatdist
+function		sumofsquares
+overconsumption		1
+areaaggfile		allarea.agg
+ageaggfile		allage.agg
+lenaggfile		nolen.agg
+fleetnames		seine
+stocknames		anch
+;
+[component]
+name		understocking
+weight		1e+10
+type		understocking
+;
+[component]
+name		bounds
+weight		1e+10
+type		penalty
+datafile		penaltyfile
+;

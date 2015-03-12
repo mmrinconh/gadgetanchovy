@@ -1,0 +1,105 @@
+;Printfile ANCH_MODEL
+;
+;
+; informacion de los likelihood components
+[component]
+type		likelihoodsummaryprinter
+printfile	summary.print
+;
+;==== Fichero total del stock ====
+;=================================
+[component]
+type                 stockstdprinter
+stockname            anch
+scale                1
+printfile            anch.std.total
+precision            6
+printatstart         0
+yearsandsteps        all all
+
+[component]
+type                 stockfullprinter
+stockname            anch
+printfile            anch.total
+precision            6
+printatstart         0
+yearsandsteps         all all
+
+
+
+; ===== Length Distribution =====
+; ----  Fleet Length Observed Distributions  ----
+;flota azti, española
+[component]
+type		     likelihoodprinter
+likelihood	     ldist.seine
+printfile	    ldist.seine.like
+yearsandsteps        all all
+;
+;[component]
+;type		     likelihoodprinter
+;likelihood	     effort.sur
+;printfile	   anch.effort.like
+;yearsandsteps        all all
+;
+
+
+;
+; ----  Fleet Length Modelled Distributions  ----
+;
+;
+[component]
+type		predatorprinter
+predatornames	seine
+preynames       anch
+areaaggfile	allarea.agg
+predlenaggfile	alllen.agg
+preylenaggfile	nolen.agg
+biomass		0
+printfile	anch.seine
+yearsandsteps	all	all
+;
+
+
+;
+;=====     Stock   =====
+; total number individuals for total biomass  by age
+[component]
+type		     stockprinter
+stocknames 	     anch
+areaaggfile	    allarea.agg
+ageaggfile	     age.agg
+lenaggfile	     nolen.agg
+printfile		anch.abun
+yearsandsteps	     all all
+
+;total number individuals for total biomass 
+[component]
+type		     stockprinter
+stocknames 	     anch
+areaaggfile	     allarea.agg
+ageaggfile	     allage.agg
+lenaggfile	     alllen.agg
+printfile	     anch.biom
+yearsandsteps	     all 4
+;Recruit number individuals for total biomass 
+[component]
+type		     stockprinter
+stocknames 	     anch
+areaaggfile	     allarea.agg
+ageaggfile	     age1.agg
+lenaggfile	alllen.agg
+printfile	     R.anch.biom
+yearsandsteps	     all 4
+;
+; total number individuals by length
+[component]
+type		     stockprinter
+stocknames 	     anch
+areaaggfile	     allarea.agg
+ageaggfile	     allage.agg
+lenaggfile	     nolen.agg
+printfile	  anch.ldist
+yearsandsteps	     all all
+;
+

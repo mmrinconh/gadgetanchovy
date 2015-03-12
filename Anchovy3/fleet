@@ -1,0 +1,29 @@
+;
+; Fleet data for this anchovy model
+;
+; Details for the commercial fleet
+;
+[component]
+numberfleet      seine            ; fleet name
+livesonareas    1               ; areas for the fleet
+suitability      anch    function constant       #constant    ; alpha    beta     gamma  delta
+amount          fleetmat.data      ; where the catch data is stored
+;
+; Details for the survey fleet
+;
+;[component]
+;totalfleet      survey          ; fleet name
+;livesonareas    1               ; areas for the fleet
+;suitability
+;had    function exponential       #asur    #bsur    0      1
+;amount          fleet.data      ; where the catch data is stored
+;
+; Details for the predicted fleet
+;
+;[component]
+;linearfleet     future          ; fleet name
+;livesonareas    1               ; areas for the fleet
+;multiplicative  #mult           ; scaling factor
+;suitability
+;had    function exponential       #acomm   #bcomm   0      1
+;amount          fleet.predict   ; where the catch data is stored

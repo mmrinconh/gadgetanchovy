@@ -1,0 +1,47 @@
+;Printfile ANCH_MODEL
+;
+;
+; informacion de los likelihood components
+[component]
+type		likelihoodsummaryprinter
+printfile	summary.print
+;
+; Fichero total del stock 
+;
+[component]
+type                 stockstdprinter
+stockname            anch
+scale                1
+printfile            anch.std.total
+precision            6
+printatstart         0
+yearsandsteps        all all
+
+[component]
+type                 stockfullprinter
+stockname            anch
+printfile            anch.total
+precision            6
+printatstart         0
+yearsandsteps         all all
+
+
+
+; 
+; 
+[component]
+type		     likelihoodprinter
+likelihood	     ldist.seine
+printfile	    ldist.seine.like
+yearsandsteps        all all
+;
+;[component]
+;type		     likelihoodprinter
+;likelihood	     effort.sur
+;printfile	   anch.effort.like
+;yearsandsteps        all all
+;
+
+
+;
+

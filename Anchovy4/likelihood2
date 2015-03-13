@@ -1,0 +1,47 @@
+; Archivo con componentes de verosimilitud y sus pesos relativos correspondientes.
+; DW
+; Likelihood bounds
+[component]
+name			bounds
+weight		        1e+10
+type			penalty
+datafile		penaltyfile
+; 
+; Understocking
+[component]
+name			understocking
+weight			1e+10
+type			understocking
+;
+; Length dist of catches
+[component]
+name			ldist.seine
+weight			50
+type			catchdistribution
+datafile		anch.lengthmatdist
+function		sumofsquares
+overconsumption		1
+areaaggfile		allarea.agg ;../CommonFiles/area.agg
+ageaggfile		allage.agg ;../CommonFiles/allage.agg
+lenaggfile		nolen.agg ;../CommonFiles/len.agg
+fleetnames		seine
+stocknames		anch
+
+
+
+
+;
+;[component]
+;name  			effort.sur
+;weight  		0.33
+;type  			surveyindices
+;datafile		anch.effort
+;sitype			effort
+;biomass			0 ; 1 to base index data on biomass
+;areaaggfile		allarea.agg ;<area aggregation file specifying areas>
+;fleetnames		seine
+;stocknames		anch
+;fittype			linearfit
+
+
+

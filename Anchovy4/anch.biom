@@ -1,0 +1,19 @@
+; Gadget version 2.2.00-BETA running on Marganchovy Tue Mar 10 12:14:43 2015
+; Output file for the following stocks anch
+; Printing the following information at the end of each timestep
+; year-step-area-age-length-number-mean weight
+1988    4    allarea    allages     alllen 1.358539e+13    5.9651147
+1989    4    allarea    allages     alllen 2.2280964e+13    8.9654975
+1990    4    allarea    allages     alllen 2.2354758e+13    13.146252
+1991    4    allarea    allages     alllen 2.1827979e+13     16.67677
+1992    4    allarea    allages     alllen 3.4873476e+13    14.189236
+1993    4    allarea    allages     alllen 4.4855527e+13    14.646838
+1994    4    allarea    allages     alllen 3.2235595e+13     21.93976
+1995    4    allarea    allages     alllen 2.7917584e+13    25.620253
+1996    4    allarea    allages     alllen 4.0915259e+13    19.463348
+1997    4    allarea    allages     alllen 5.3780296e+13    17.397171
+1998    4    allarea    allages     alllen 5.3229037e+13    19.570108
+1999    4    allarea    allages     alllen 4.6458331e+13    23.314667
+2000    4    allarea    allages     alllen 4.3919502e+13    24.985096
+2001    4    allarea    allages     alllen 4.5663038e+13    24.423995
+2002    4    allarea    allages     alllen 5.4187759e+13    21.735171

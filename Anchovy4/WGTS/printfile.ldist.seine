@@ -1,0 +1,29 @@
+; Printfile for gadget, created by Rgadget
+; WGTS/printfile.ldist.seine
+;
+[component]
+type	likelihoodsummaryprinter
+printfile	WGTS/out.ldist.seine/summary.print
+;
+[component]
+type	stockstdprinter
+stockname	anch
+scale	1
+printfile	WGTS/out.ldist.seine/anch.std.total
+precision	6
+printatstart	0
+yearsandsteps	all	all
+;
+[component]
+type	stockfullprinter
+stockname	anch
+printfile	WGTS/out.ldist.seine/anch.total
+precision	6
+printatstart	0
+yearsandsteps	all	all
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.seine
+printfile	WGTS/out.ldist.seine/ldist.seine.like
+yearsandsteps	all	all

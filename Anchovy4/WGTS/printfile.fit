@@ -1,0 +1,33 @@
+; gadget printfile, created in 2015-03-11
+[component]
+type	likelihoodsummaryprinter
+printfile	WGTS/out.fit/likelihoodsummary
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.seine
+printfile	WGTS/out.fit/ldist.seine
+;
+[component]
+type	stockstdprinter
+stockname	anch
+printfile	WGTS/out.fit/anch.std
+yearsandsteps	 all 1
+[component]
+type	stockprinter
+stocknames	anch
+areaaggfile	WGTS/print.aggfiles/anch.area.agg
+ageaggfile	WGTS/print.aggfiles/anch.allages.agg
+lenaggfile	WGTS/print.aggfiles/anch.len.agg
+printfile	WGTS/out.fit/anch.full
+yearsandsteps	 all 1
+[component]
+type	predatorpreyprinter
+predatornames	seine
+preynames	anch
+areaaggfile	WGTS/print.aggfiles/anch.area.agg
+ageaggfile	WGTS/print.aggfiles/anch.age.agg
+lenaggfile	WGTS/print.aggfiles/anch.alllen.agg
+printfile	WGTS/out.fit/anch.prey
+yearsandsteps	all all
+;

@@ -1,0 +1,34 @@
+; Gadget version 2.2.00-BETA running on Marganchovy Wed Mar 11 21:58:54 2015
+; Listing of the switches used in the current Gadget run
+Linf	anchgrowergrowthcalcHmodelvariable	
+kappa	anchgrowergrowthcalcHmodelvariable	
+alpha	anchgrowergrowthcalcHmodelvariable	
+beta	anchgrowergrowthcalcHmodelvariable	
+bbeta	anchgrower	
+rec88	anchrenewaldata	
+rec89	anchrenewaldata	
+rec90	anchrenewaldata	
+rec91	anchrenewaldata	
+rec92	anchrenewaldata	
+rec93	anchrenewaldata	
+rec94	anchrenewaldata	
+rec95	anchrenewaldata	
+rec96	anchrenewaldata	
+rec97	anchrenewaldata	
+rec98	anchrenewaldata	
+rec99	anchrenewaldata	
+rec00	anchrenewaldata	
+rec01	anchrenewaldata	
+rec02	anchrenewaldata	
+constant	fleetseinepredatorseinesuitabilityforanchmodelvariable	
+;
+; Listing of the likelihood components used in the current Gadget run
+;
+; Component	Type	Weight
+ldist.seine	3	780.64
+understocking	2	1e+10
+bounds	8	1e+10
+;
+; Listing of the output from the likelihood components for the current Gadget run
+;
+0	   19.9999  0.0799994    4.18811   0.477542    6.63369 5.98864e+07 0.00257139 7.88454e+06 4.35639e+06 3.71379e+06 3.18613e+06 1.80898e+06 4.64263e+06 2.74071e+06 1.55487e+06 3.93016e+06     833632 1.73197e+06     628266     273846          1 		   9.126        0        0 		   7123.81950070846

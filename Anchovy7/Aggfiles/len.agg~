@@ -1,0 +1,13 @@
+;
+; Length aggregation file - 2cm length groups
+;
+len2	2       4
+len4     4       6
+len6     6       8
+len8     8    10
+len10     10    12
+len12     12    14
+len14     14    16
+len16    16   18
+len18     18    20
+len20	20     22	

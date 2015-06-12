@@ -1,0 +1,25 @@
+; 
+;antes growth era 0.074  lower 0.06 y upper 0.08  ahora es 0.074*12 0.06*12 y 0.08*12 0,96 
+switch	      value	lower      upper  optimise
+Linf	       19.0         18          20	       1     
+kappa	          0.89	      0.72       0.96        1
+alpha	random	0.0001	10 1
+beta	random	0.0001	10 1
+bbeta	       random      0.1        5000        1
+rec88	random	0.000001	60000000	1
+rec89	random	0.000001	60000000	1
+rec90	random	0.000001	60000000	1
+rec91	random	0.000001	60000000	1
+rec92	random	0.000001	60000000	1
+rec93	random	0.000001	60000000	1
+rec94	random	0.000001	60000000	1
+rec95	random	0.000001	60000000	1
+rec96	random	0.000001	60000000	1
+rec97	random	0.000001	60000000	1
+rec98	random	0.000001	60000000	1
+rec99	random	0.000001	60000000	1
+rec00	random	0.000001	60000000	1
+rec01	random	0.000001	60000000	1
+rec02	random	0.000001	60000000	1
+constant 1	0.8		1.1		0
+

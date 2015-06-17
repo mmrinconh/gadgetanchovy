@@ -1,0 +1,5 @@
+; <age>  <area>  <age factor>  <area factor>  <mean>  <stddev>  <relcond> 
+0 	1	(* 60000 #init0 )	1	5	5	1
+1 	1	(* 60000  #init1 )	1	13	6	1
+2 	1	(* 60000  #init2 )	1	13	6	1
+3 	1	(* 0.000001 #init3)	1	13	6	1

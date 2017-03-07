@@ -1,10 +1,11 @@
 
-function (years = 20; params.file = "WGTS/params.final"; main.file = "main"; 
+function (years = 2; steps =8; params.file = "WGTS/params.final"; main.file = "main"; 
     num.trials = 10; fleets = data.frame(fleet = "seine", ratio = 0.1); 
-    biomass = FALSE; effort = 0.2; spawnmodel = "none"; spawnvar = NULL; 
+    biomass = FALSE; effort = 0.85; spawnmodel = "none"; spawnvar = NULL; 
     selectedstocks = NULL; biomasslevel = NULL; check.previous = FALSE; 
-    save.results = TRUE; stochastic = TRUE; rec.window = NULL; 
+    save.results = TRUE; stochastic = TRUE; rec.window = 1996:2009; 
     compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "PRE")) 
+#effort=1-exp(-1.94) 1.94 is the F of 2014=0.85
 {
     pre <- paste(gd$dir, gd$rel.dir, sep = "/")
     if (check.previous) {
@@ -22,8 +23,9 @@ function (years = 20; params.file = "WGTS/params.final"; main.file = "main";
     fleet <- Rgadget:::read.gadget.fleet(main$fleetfiles)
     all.fleets <- paste(fleet$fleet$fleet, collapse = " ")
     params <- read.gadget.parameters(params.file)
-    rec <- get.gadget.recruitment(stocks, params)
-    rec <- arrange(rec, stock, year)
+#To put seasonal recruitment is only necessary to add collapse=FALSE in get.gadget.recruitment and add the step in arrange
+    rec <- get.gadget.recruitment(stocks, params, collapse= FALSE)
+    rec <- arrange(rec, stock, year, step)
     l_ply(stocks, function(x) {
         Rgadget:::writeAggfiles(x, folder = sprintf("%s/Aggfiles", pre))
     })
@@ -78,44 +80,94 @@ function (years = 20; params.file = "WGTS/params.final"; main.file = "main";
     } else {
         tmp <- rec
     }
-    if (stochastic) {
-        fitAR <- lm(tmp$recruitment[-1] ~ head(tmp$recruitment, 
-            -1))
-        coeffAR <- as.numeric(coefficients(fitAR))
-        sdAR <- sd(resid(fitAR))
-        x <- array(pmax(rnorm(years * num.trials, coeffAR[1], 
-            sdAR), 0), c(num.trials, years))
-    } else {
-        x <- array(mean(tail(tmp$recruitment, 3)), c(num.trials, 
-            years))
-        coeffAR <- c(0, 0, 0)
-    }
-    rec.forward <- array(0, c(num.trials, years + 1), dimnames = list(trial = 1:num.trials, 
+#    if (stochastic) {
+#        fitAR <- lm(tmp$recruitment[-1] ~ head(tmp$recruitment, 
+#            -1))
+#        coeffAR <- as.numeric(coefficients(fitAR))
+#        sdAR <- sd(resid(fitAR))
+#        x <- array(pmax(rnorm(years * num.trials, coeffAR[1], 
+#            sdAR), 0), c(num.trials, years))
+#    } else {
+#        x <- array(mean(tail(tmp$recruitment, 3)), c(num.trials, 
+#            years))
+#        coeffAR <- c(0, 0, 0)
+#    }
+	library(repmis)
+	source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovy79/VAR4.Rdata?raw=True")
+	load("VAR4ser.Rdata")
+       rec.forward <- array(0, c(num.trials, years + 1), dimnames = list(trial = 1:num.trials, 
         year = sim.begin:(sim.begin + years)))
-    if (num.trials == 1) {
-        rec.forward[1] <- tail(rec$recruitment, 1)
-        for (i in 1:years) {
-            rec.forward[i + 1] <- coeffAR[2] * rec.forward[i] + 
-                x[i]
-        }
-        rec.out <- data.frame(year = sim.begin:(sim.begin + years), 
-            recruitment = as.numeric(tail(rec.forward, years)))
-        tmp <- mutate(rec.out, recuitment = recruitment, lower = 0, 
-            upper = recruitment + 1, optimise = 0)
-        tmp$year <- paste("rec", tmp$year, sep = "")
-        names(tmp)[1:2] <- c("switch", "value")
-        params <- subset(params, !(switch %in% tmp$switch))
-        params.forward <- rbind.fill(params, data.frame(switch = "rgadget.effort", 
-            value = effort, lower = 1e-04, upper = 100, optimise = 0, 
-            stringsAsFactors = FALSE), tail(tmp[names(params)], 
-            -1))
-        write.gadget.parameters(params.forward, file = sprintf("%s/params.forward", 
-            pre))
-    } else {
+	rec.forward.steps <-matrix(c(tail(rec$recruitment,4),rep(0,steps)),nr=num.trials, nc=steps + 4, dimnames = list(trial = 1:num.tr		ials,step = 1:(steps+4)), byrow=T)
+#    if (num.trials == 1) {
+#	rec.forward<-tail(rec$recruitment, 1)
+#        rec.forward.steps[1] <- tail(rec$recruitment, 1)
+#        for (i in 1:years) {
+#            rec.forward[i + 1] <- coeffAR[2] * rec.forward[i] + 
+#                x[i]
+#        }
+#        rec.out <- data.frame(year = sim.begin:(sim.begin + years), 
+#            recruitment = as.numeric(tail(rec.forward, years)))
+#        tmp <- mutate(rec.out, recuitment = recruitment, lower = 0, 
+#            upper = recruitment + 1, optimise = 0)
+#        tmp$year <- paste("rec", tmp$year, sep = "")
+#        names(tmp)[1:2] <- c("switch", "value")
+#        params <- subset(params, !(switch %in% tmp$switch))
+#        params.forward <- rbind.fill(params, data.frame(switch = "rgadget.effort", 
+#            value = effort, lower = 1e-04, upper = 100, optimise = 0, 
+#            stringsAsFactors = FALSE), tail(tmp[names(params)], 
+#            -1))
+#        write.gadget.parameters(params.forward, file = sprintf("%s/params.forward", 
+#            pre))
+#    } else {
         rec.forward[, 1] <- tail(rec$recruitment, 1)
-        for (i in 1:years) {
-            rec.forward[, i + 1] <- coeffAR[2] * rec.forward[, 
-                i] + x[, i]
+      #rec.forward.steps[,1:4] <- tail(rec$recruitment,4)
+#        for (i in 1:years) {
+#            rec.forward[, i + 1] <- coeffAR[2] * rec.forward[, 
+#                i] + x[, i]
+#        }
+# Windvalues4simu<-window(Windfv,start=2008)
+#Qtr1 Qtr2 Qtr3 Qtr4
+#2008   26   27   16   24
+#2009   28   20   25    6
+	
+#Wind
+#1999    3   11   10   24
+#2000   26   24   22    5
+	datamatpred<-model.frame(V.4.ser$varresult[[2]])[dim(V.4.ser$datamat)[1],][-1]
+	names(datamatpred)<-colnames(model.frame(V.4.ser$varresult[[2]]))[-1]
+	#datamatpred[1,c(1,3,5,7,9)]<-rev(window(Windfv, start=c(1999, 1), end=c(2000, 1))) #1999 year with smallest Wind 2005 the highest
+	#datamatpred[,c(2,4,6,8,10)]<-c(rec.forward.steps[1,6],rec.forward.steps[1,5],rec.forward.steps[1,4],rec.forward.steps[1,3],rec.forward.steps[1,2])
+#predict(V.4$varresult[[2]], n.ahead=steps, data=datamatpred)
+#For variance vars:::.fecov y vars:::predict based on Vector Autoregressive models for multivariate time series Lutkepolt 1991
+	object<-V.4.ser
+	K <- object$K
+	n.ahead<-8
+	ci<-0.95
+	sig.y <- vars:::.fecov(x = object, n.ahead = n.ahead)
+	yse <- matrix(NA, nrow = n.ahead, ncol = K)
+	ynames <- colnames(object$y)
+	for (i in 1:n.ahead) {
+        yse[i, ] <- sqrt(diag(sig.y[, , i]))
+    }
+    yse <- -1 * qnorm((1 - ci)/2) * yse
+	x <- array(0,c(num.trials, steps)) 
+        for (i in 1:steps){
+	x[,i]<-pmax(rnorm(num.trials, 0, 2*yse[i,2]*10/3.92),0)
+	}
+	#sd<-10(rec.forward.steps.ci.upper-rec.forward.steps.ci.lower)/3.92, upper=value+yse, lower=value-yse (assuming sample size=100, sd=2*yse*10/3.92)
+ 	for (i in 1:steps) {
+		datamatpred[,c(1,2)]<-rev(window(Windfv, start=c(1998+ceiling(i/4),i-floor((i-1)/4)*4), end=c(1999+ceiling(i/4), i-floor((i-1)/4)*4)))[c(3,4)]
+#Wind 1999 y 2000
+		datamatpred[,c(3)]<-rec.forward.steps[1,i]#,rec.forward.steps[,(2+i)],rec.forward.steps[,(1+i)],rec.forward.steps[,i])
+		#datamatpred[10]<-model.frame(V.4$varresult[[2]])[dim(V.4$datamat)[1],][11]+i
+            rec.forward.steps[, i + 4] <- predict(V.4.ser$varresult[[2]],newdata=datamatpred)+x[,i]
+        }
+	#rec.forward.steps.ci.upper<-rec.forward.steps[1,5:(steps+4)]+t(yse[,2])
+	#rec.forward.steps.ci.lower<-rec.forward.steps[1,5:(steps+4)]-t(yse[,2])
+    	#colnames(yse) <- paste(ci, "of", ynames)
+	#sd<-10(rec.forward.steps.ci.upper-rec.forward.steps.ci.lower)/3.92
+	for (i in 1:years) {
+            rec.forward[,i + 1] <- rowSums(rec.forward.steps[,(i*4+1):(i*4+4)])
         }
         rec.out <- arrange(melt(rec.forward[, -1], value.name = "recruitment"), 
             trial, year)
@@ -134,7 +186,7 @@ function (years = 20; params.file = "WGTS/params.final"; main.file = "main";
         })
         Rgadget:::write.gadget.parameters(params.forward, file = sprintf("%s/params.forward", 
             pre), columns = FALSE)
-    }
+    #}
     print.txt <- paste("[component]", "type             stockprinter", 
         "stocknames       %1$s", "areaaggfile      %2$s/Aggfiles/%1$s.area.agg", 
         "ageaggfile       %2$s/Aggfiles/%1$s.allages.agg", "lenaggfile       %2$s/Aggfiles/%1$s.len.agg", 

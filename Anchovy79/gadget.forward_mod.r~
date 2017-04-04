@@ -180,15 +180,10 @@ years = 2; steps =8; params.file = "WGTS/params.final"; main.file = "main";
     }
     yse <- -1 * qnorm((1 - ci)/2) * yse
 	x <- array(0,c(num.trials, steps)) 
-		y <- array(0,c(num.trials, steps)) 
         for (i in 1:steps){
 	x[,i]<-pmax(rnorm(num.trials, 0, 2*yse[i,2]*10/3.92),0)
-	y[,i]<-pmax(rnorm(num.trials, 0, sd(resid(object))),0) #With y[i] I just use the sd as the sd of residuals for equation 2 in the var model, sig.y is using both equations. 
-
-
 	}
 	#sd<-10(rec.forward.steps.ci.upper-rec.forward.steps.ci.lower)/3.92, upper=value+yse, lower=value-yse (assuming sample size=100, sd=2*yse*10/3.92)
-
 	source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovy79/Windfv.Rdata?raw=True")
  	for (i in 1:steps) {
 		datamatpred[,c(1,2)]<-rev(window(Windfv, start=c(1998+ceiling(i/4),i-floor((i-1)/4)*4), end=c(1999+ceiling(i/4), i-floor((i-1)/4)*4)))[c(3,4)]

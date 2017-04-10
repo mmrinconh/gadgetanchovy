@@ -52,9 +52,14 @@ years = 2; steps =8; params.file = "WGTS/params.final"; main.file = "main";
     biomass = FALSE; effort = 0.2; spawnmodel = "none"; spawnvar = NULL;
     selectedstocks = NULL; biomasslevel = NULL; check.previous = FALSE;
     save.results = TRUE; stochastic = TRUE; rec.window = 1996:2015;
-    compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "PRE6c") #wind 30 first then 10 , OJO cambio en el número de trials, varianza y
+    compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "PRE6c") #wind 30 first then 20 , OJO cambio en el número de trials, varianza y, cambio en los valores iniciales del reclutamiento que estaban en el 2013 y quito los 2 últimos trimestres de 2015
 
-
+years = 2; steps =8; params.file = "WGTS/params.final"; main.file = "main";
+    num.trials = 100; fleets = data.frame(fleet = "seine", ratio = 1);
+    biomass = FALSE; effort = 0.2; spawnmodel = "none"; spawnvar = NULL;
+    selectedstocks = NULL; biomasslevel = NULL; check.previous = FALSE;
+    save.results = TRUE; stochastic = TRUE; rec.window = 1996:2015;
+    compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "PRE6d") #With froid model, varianza y,100 trials bad wind
 
 
 #Good wind 48 and 77 (1999 and 2000)
@@ -136,7 +141,7 @@ windend<-2005
     main$fleetfiles <- c(main$fleetfiles, sprintf("%s/fleet", 
         pre))
     Rgadget:::write.gadget.fleet(fleet, file = sprintf("%s/fleet", pre))
-    if (!is.null(rec.window)) {
+    if (!is.null(rec.window)) { #rec.window is not used if n.trials is bigger than 1 (tmp is only used below in that case)
         if (length(rec.window) == 1) {
             tmp <- subset(rec, year < rec.window)
         } else {
@@ -146,6 +151,7 @@ windend<-2005
     } else {
         tmp <- rec
     }
+    tmp<-tmp[!(tmp$year == max(rec.window)-1 & (tmp$step==3 | tmp$step==4)),]
 #    if (stochastic) {
 #        fitAR <- lm(tmp$recruitment[-1] ~ head(tmp$recruitment, 
 #            -1))
@@ -159,8 +165,8 @@ windend<-2005
 #        coeffAR <- c(0, 0, 0)
 #    }
 	library(repmis)
-	source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovy79/VAR4ser.Rdata?raw=True")
-	#load("VAR4ser.Rdata")
+	source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovy79/froid.Rdata?raw=True")
+	load("VAR4ser.Rdata")
        rec.forward <- array(0, c(num.trials, years + 1), dimnames = list(trial = 1:num.trials, 
         year = sim.begin:(sim.begin + years)))
 	rec.forward.steps <-matrix(c(tail(rec$recruitment,8)[c(3:6)],rep(0,steps)),nr=num.trials, nc=steps + 4, dimnames = list(trial = 1:num.tr		ials,step = 1:(steps+4)), byrow=T) #Take 3,4 of the previous year and 1 2 of the year as initial recruitments
@@ -199,8 +205,12 @@ windend<-2005
 #Wind
 #1999    3   11   10   24
 #2000   26   24   22    5
-	datamatpred<-model.frame(V.4.ser$varresult[[2]])[dim(V.4.ser$datamat)[1],][-1]
-	names(datamatpred)<-colnames(model.frame(V.4.ser$varresult[[2]]))[-1]
+	#with VAR
+	#datamatpred<-model.frame(V.4.ser$varresult[[2]])[dim(V.4.ser$datamat)[1],][-1] #last line of data
+	#	names(datamatpred)<-colnames(model.frame(V.4.ser$varresult[[2]]))[-1] 
+	#with no VAR
+	datamatpred<-model.frame(froid)[dim(froid$model)[1],][-1]
+	names(datamatpred)<-colnames(model.frame(froid))[-1] 
 	#datamatpred[1,c(1,3,5,7,9)]<-rev(window(Windfv, start=c(1999, 1), end=c(2000, 1))) #1999 year with smallest Wind 2005 the highest
 	#datamatpred[,c(2,4,6,8,10)]<-c(rec.forward.steps[1,6],rec.forward.steps[1,5],rec.forward.steps[1,4],rec.forward.steps[1,3],rec.forward.steps[1,2])
 #predict(V.4$varresult[[2]], n.ahead=steps, data=datamatpred)
@@ -235,11 +245,11 @@ windend<-2005
 #Windfv[17*4]<-30
 #1  2     3   4 1
 #_ Wi+1 Wi+2	Ri+4
-Windvalues<-c(30,20,20,20,30,20,20,20,20)#corresponding to steps 2,3,4,1,2,3,4
+#Windvalues<-c(20,30,20,20,20,30,20,20,20)#corresponding to steps 2,3,4,1,2,3,4
  	for (i in 1:steps) {
-		#datamatpred[,c(1,2)]<-rev(window(Windfv, start=c(windstart+ceiling(i/4),i-floor((i-1)/4)*4), end=c(windend+ceiling(i/4), i-floor((i-1)/4)*4)))[c(3,4)]
+		datamatpred[,c(1,2)]<-rev(window(Windfv, start=c(windstart+ceiling(i/4),i-floor((i-1)/4)*4), end=c(windend+ceiling(i/4), i-floor((i-1)/4)*4)))[c(3,4)]
 #Wind 1999 y 2000
-		datamatpred[,c(1,2)]<-rev(Windvalues[c(i,i+1)])
+		#datamatpred[,c(1,2)]<-rev(Windvalues[c(i,i+1)])
 		datamatpred[,c(3)]<-rec.forward.steps[1,i]#,rec.forward.steps[,(2+i)],rec.forward.steps[,(1+i)],rec.forward.steps[,i])
 		#datamatpred[10]<-model.frame(V.4$varresult[[2]])[dim(V.4$datamat)[1],][11]+i
            #rec.forward.steps[, i + 4] <- predict(V.4.ser$varresult[[2]],newdata=datamatpred)+x[,i]

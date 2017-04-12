@@ -59,16 +59,24 @@ years = 2; steps =8; params.file = "WGTS/params.final"; main.file = "main";
     biomass = FALSE; effort = 0.2; spawnmodel = "none"; spawnvar = NULL;
     selectedstocks = NULL; biomasslevel = NULL; check.previous = FALSE;
     save.results = TRUE; stochastic = TRUE; rec.window = 1996:2015;
-    compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "PRE6d") #With froid model, varianza y,100 trials bad wind
+    compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "PRE6bw") ;windstart<-2000; windend<-2001 #With froid model, varianza y,100 trials bad wind
+#The wind counts from the 4th of windstart+1
+#bad wind 2000 y 2001
+years = 2; steps =8; params.file = "WGTS/params.final"; main.file = "main";
+    num.trials = 100; fleets = data.frame(fleet = "seine", ratio = 1);
+    biomass = FALSE; effort = 0.2; spawnmodel = "none"; spawnvar = NULL;
+    selectedstocks = NULL; biomasslevel = NULL; check.previous = FALSE;
+    save.results = TRUE; stochastic = TRUE; rec.window = 1996:2015;
+    compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "PRE6gw") ;#Good wind
+windstart<-1998
+windend<-1999
 
-
-#Good wind 48 and 77 (1999 and 2000)
-#windstart<-1998
-#windend<-1999
+#Yes but it doesn't work
+#windstart<-1997
+#windend<-1998
 
 #bad wind
-windstart<-2004
-windend<-2005
+
 #effort=1-exp(-1.94) 1.94 is the F of 2014=0.85
 #{
     pre <- paste(gd$dir, gd$rel.dir, sep = "/")
@@ -166,10 +174,20 @@ windend<-2005
 #    }
 	library(repmis)
 	source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovy79/froid.Rdata?raw=True")
-	load("VAR4ser.Rdata")
+	#load("VAR4ser.Rdata")
        rec.forward <- array(0, c(num.trials, years + 1), dimnames = list(trial = 1:num.trials, 
         year = sim.begin:(sim.begin + years)))
-	rec.forward.steps <-matrix(c(tail(rec$recruitment,8)[c(3:6)],rep(0,steps)),nr=num.trials, nc=steps + 4, dimnames = list(trial = 1:num.tr		ials,step = 1:(steps+4)), byrow=T) #Take 3,4 of the previous year and 1 2 of the year as initial recruitments
+	rec.forward.steps <-matrix(c(tail(rec$recruitment,8)[c(3:6)]/1e6,rep(0,steps)),nr=num.trials, nc=steps + 4, dimnames = list(trial = 1:num.tr		ials,step = 1:(steps+4)), byrow=T) #Take 3,4 of the previous year and 1 2 of the year as initial recruitments
+#tail(rec)
+#     .id stock year step area  recruitment
+#114 anch  anch 2014    3    1 1.320423e+08
+#115 anch  anch 2014    4    1 1.367686e+09
+#116 anch  anch 2015    1    1 2.864850e-04
+#117 anch  anch 2015    2    1 3.995148e-05
+#118 anch  anch 2015    3    1 3.718528e+09
+#119 anch  anch 2015    4    1 8.462847e+09
+
+
 #    if (num.trials == 1) {
 #	rec.forward<-tail(rec$recruitment, 1)
 #        rec.forward.steps[1] <- tail(rec$recruitment, 1)
@@ -215,29 +233,26 @@ windend<-2005
 	#datamatpred[,c(2,4,6,8,10)]<-c(rec.forward.steps[1,6],rec.forward.steps[1,5],rec.forward.steps[1,4],rec.forward.steps[1,3],rec.forward.steps[1,2])
 #predict(V.4$varresult[[2]], n.ahead=steps, data=datamatpred)
 #For variance vars:::.fecov y vars:::predict.varest based on Vector Autoregressive models for multivariate time series Lutkepolt 1991
-	object<-V.4.ser
-	K <- object$K
-	n.ahead<-8
-	ci<-0.95
-	sig.y <- vars:::.fecov(x = object, n.ahead = n.ahead)
-	yse <- matrix(NA, nrow = n.ahead, ncol = K)
-	ynames <- colnames(object$y)
-	for (i in 1:n.ahead) {
-        yse[i, ] <- sqrt(diag(sig.y[, , i]))
-    }
-    yse <- -1 * qnorm((1 - ci)/2) * yse
-	x <- array(0,c(num.trials, steps)) 
+	#object<-V.4.ser
+	object<-froid
+	#K <- object$K
+	#n.ahead<-8
+	#ci<-0.95
+	#sig.y <- vars:::.fecov(x = object, n.ahead = n.ahead)
+	#yse <- matrix(NA, nrow = n.ahead, ncol = K)
+	#ynames <- colnames(object$y)
+	#for (i in 1:n.ahead) {
+       # yse[i, ] <- sqrt(diag(sig.y[, , i]))
+   # }
+  #  yse <- -1 * qnorm((1 - ci)/2) * yse
+	#x <- array(0,c(num.trials, steps)) 
 		y <- array(0,c(num.trials, steps)) 
         for (i in 1:steps){
-	x[,i]<-pmax(rnorm(num.trials, 0, 2*yse[i,2]*10/3.92),0)
+	#x[,i]<-pmax(rnorm(num.trials, 0, 2*yse[i,2]*10/3.92),0)
 	y[,i]<-pmax(rnorm(num.trials, 0, sd(resid(object))),0) #With y[i] I just use the sd as the sd of residuals for equation 2 in the var model, sig.y is using both equations. 
-
-
 	}
 	#sd<-10(rec.forward.steps.ci.upper-rec.forward.steps.ci.lower)/3.92, upper=value+yse, lower=value-yse (assuming sample size=100, sd=2*yse*10/3.92)
-
-	#source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovy79/Windfv.Rdata?raw=True")
-
+	source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovy79/Windfv.Rdata?raw=True")
 #To know wind by year: aggregate(Windydays~year, wind_month_trim,sum) in Gadget.Rnw
 #The first quarter determines the negative impact
 #Base Scenario 
@@ -246,14 +261,15 @@ windend<-2005
 #1  2     3   4 1
 #_ Wi+1 Wi+2	Ri+4
 #Windvalues<-c(20,30,20,20,20,30,20,20,20)#corresponding to steps 2,3,4,1,2,3,4
- 	for (i in 1:steps) {
-		datamatpred[,c(1,2)]<-rev(window(Windfv, start=c(windstart+ceiling(i/4),i-floor((i-1)/4)*4), end=c(windend+ceiling(i/4), i-floor((i-1)/4)*4)))[c(3,4)]
+	for (i in 1:steps) {
+		#datamatpred[,c(1,2)]<-rev(window(Windfv, start=c(windstart+ceiling(i/4),i-floor((i-1)/4)*4), end=c(windend+ceiling(i/4), i-floor((i-1)/4)*4)))[c(3,4)]
+		datamatpred[,c(2,3)]<-window(Windfv, start=c(windstart+ceiling(i/4),i-floor((i-1)/4)*4), end=c(windend+ceiling(i/4), i-floor((i-1)/4)*4))[c(4,5)] #For recruitment of step three corresponds Wind 4 and 1
 #Wind 1999 y 2000
 		#datamatpred[,c(1,2)]<-rev(Windvalues[c(i,i+1)])
-		datamatpred[,c(3)]<-rec.forward.steps[1,i]#,rec.forward.steps[,(2+i)],rec.forward.steps[,(1+i)],rec.forward.steps[,i])
+		datamatpred[,c(1)]<-rec.forward.steps[1,i]#,rec.forward.steps[,(2+i)],rec.forward.steps[,(1+i)],rec.forward.steps[,i])
 		#datamatpred[10]<-model.frame(V.4$varresult[[2]])[dim(V.4$datamat)[1],][11]+i
            #rec.forward.steps[, i + 4] <- predict(V.4.ser$varresult[[2]],newdata=datamatpred)+x[,i]
-	            rec.forward.steps[, i + 4] <- predict(V.4.ser$varresult[[2]],newdata=datamatpred)+y[,i]	
+	            rec.forward.steps[, i + 4] <- predict(froid,newdata=datamatpred)+y[,i]	
         }
 	#rec.forward.steps.ci.upper<-rec.forward.steps[1,5:(steps+4)]+t(yse[,2])
 	#rec.forward.steps.ci.lower<-rec.forward.steps[1,5:(steps+4)]-t(yse[,2])
@@ -266,7 +282,7 @@ windend<-2005
 
         rec.out <- arrange(melt(rec.forward[, -1], value.name = "recruitment"), 
             trial, year)
-        rec.forward <- as.data.frame(rec.forward[, -1])
+        rec.forward <- as.data.frame(rec.forward[, -1]*1e6)
         names(rec.forward) <- paste("rec", sim.begin:(sim.begin + 
             years - 1), sep = "")
         tmp <- as.data.frame(t(params$value))

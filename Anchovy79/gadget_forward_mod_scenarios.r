@@ -1,7 +1,8 @@
 #Simulation starting in the first step of the next year.Initial recruitment to simulate goes from quarter 1 to quarter 4 of the last year considered
+##effort=1-exp(-1.94) 1.94 is the F of 2014=0.85
 gadget.forward.scenarios<-function (years = 2, steps =8, params.file = "WGTS/params.final", main.file = "main", 
     num.trials = 10, fleets = data.frame(fleet = "seine", ratio = 1), 
-    biomass = FALSE, effort = 0.2, spawnmodel = "none", spawnvar = NULL, 
+    biomass = FALSE, effort = 0.85, spawnmodel = "none", spawnvar = NULL, 
     selectedstocks = NULL, biomasslevel = NULL, check.previous = FALSE, 
     save.results = TRUE, stochastic = TRUE, rec.window = 1996:2014, 
     compact = TRUE, mat.par = c(0, 0), gd = list(dir = ".", rel.dir = "BASE_fv"), Windvalues=c(20,20,20,20,20,20,20,20,20)) 

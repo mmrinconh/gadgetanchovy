@@ -94,13 +94,16 @@ gadget.forward.scenarios<-function (years = 2, steps =8, params.file = "WGTS/par
 		set.seed(42)
 		y[,i]<-pmax(rnorm(num.trials, 0, sd(resid(object))),0) #With y[i] I just use the sd as the sd of residuals for model
 		}
+	 coeffAR <- as.numeric(coefficients(froid))
+	rec.forward.steps.fv<-rec.forward.steps
 	for (i in 1:steps) {
 		datamatpred[,c(2,3)]<-Windvalues[c(i,i+1)]
 		datamatpred[,c(1)]<-rec.forward.steps[1,i]
 	         rec.forward.steps[, i + 4] <- predict(froid,newdata=datamatpred)+y[,i]	
+	rec.forward.steps.fv[, i + 4]<-coeffAR[1]+coeffAR[2]*rec.forward.steps.fv[,i]+coeffAR[3]*Windvalues[i]+coeffAR[4]*Windvalues[i+1]+y[,i]
         }
 	for (i in 1:years) {
-            rec.forward[,i+1] <- rowSums(rec.forward.steps[,(i*4+1):(i*4+4)])
+            rec.forward[,i+1] <- rowSums(rec.forward.steps.fv[,(i*4+1):(i*4+4)])
         }
 	colMeans(rec.forward)
 	colMeans(rec.forward.steps)

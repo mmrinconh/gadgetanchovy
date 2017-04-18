@@ -93,7 +93,7 @@ years = 2; steps =8; params.file = "WGTS/params.final"; main.file = "main";
     biomass = FALSE; effort = 0.2; spawnmodel = "none"; spawnvar = NULL;
     selectedstocks = NULL; biomasslevel = NULL; check.previous = FALSE;
     save.results = TRUE; stochastic = TRUE; rec.window = 1996:2009;
-    compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "BADBADW") ;Windvalues=c(20,37,37,20,20,37,37,20,20)
+    compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "mecagoendies") ;Windvalues=c(20,37,37,20,20,37,37,20,20)
 #windstart<-1998
 #windend<-1999
 #Yes but it doesn't work

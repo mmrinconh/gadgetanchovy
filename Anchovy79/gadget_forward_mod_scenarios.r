@@ -90,9 +90,9 @@ gadget.forward.scenarios<-function (years = 2, steps =8, params.file = "WGTS/par
 	names(datamatpred)<-colnames(model.frame(froid))[-1] 
 	object<-froid
 	y <- array(0,c(num.trials, steps)) 
-	        for (i in 1:steps){
+	        for (i in 1:years){
 		set.seed(42)
-		y[,i]<-pmax(rnorm(num.trials, 0, sd(resid(object))),0) #With y[i] I just use the sd as the sd of residuals for model
+		y[,i]<-pmax(rnorm(num.trials, 0, sd(resid(object))*2),0) #With y[i] I just use the sd as the sd of residuals for model, to convert to annual basis it is multiplied by sqrt(4), which are the trims that a year has.
 		}
 	 coeffAR <- as.numeric(coefficients(froid))
 	rec.forward.steps.fv<-rec.forward.steps

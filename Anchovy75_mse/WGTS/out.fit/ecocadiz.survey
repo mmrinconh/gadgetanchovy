@@ -1,0 +1,12 @@
+; Gadget version 2.1.06 running on compute-6-23 Mon Oct 31 15:37:46 2016
+; Likelihood output file for the likelihood component ecocadiz.survey
+; year-step-area-label-number
+2004    2        IXa        all      8701279
+2006    2        IXa        all     13868780
+2007    3        IXa        all     14581055
+2009    3        IXa        all     12226339
+2010    3        IXa        all    9576489.3
+2013    3        IXa        all    4474334.9
+2014    3        IXa        all     15575980
+; Regression information for area IXa
+; all intercept 0.63601147 slope 1 sse 0.25644358

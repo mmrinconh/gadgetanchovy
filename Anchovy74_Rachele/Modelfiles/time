@@ -1,0 +1,8 @@
+;
+; Time file for this anchovy model
+;
+firstyear       2001
+firststep       1
+lastyear        2015
+laststep        4
+notimesteps     4 3 3 3 3

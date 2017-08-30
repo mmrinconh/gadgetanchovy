@@ -1,0 +1,7 @@
+[fleetcomponent]
+linearfleet	seine.pre
+livesonareas	1
+multiplicative	#rgadget.effort
+suitability
+anch	function	expsuitfuncl50	#anchalpha01 #anchL5001
+amount	./PRE2/fleet.pre

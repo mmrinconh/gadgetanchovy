@@ -1,0 +1,45 @@
+; stock definition file for anch created using rgadget
+; at 2016-10-28
+;
+stockname	anch
+livesonareas	1
+minage	0
+maxage	3
+minlength	3
+maxlength	22
+dl	0.5
+refweightfile	PRE/Data/anch.refweightfile
+growthandeatlengths	PRE/Aggfiles/anch.len.agg
+doesgrow	1
+growthfunction	lengthvbsimple
+growthparameters	#Linf #kappa #alpha #beta
+beta	#bbeta
+maxlengthgroupgrowth	5
+naturalmortality	1.17	0.43	0.8	1.0
+iseaten	1
+preylengths	PRE//Aggfiles/anch.prey.agg
+energycontent	1
+doeseat	0
+;
+Initialconditions
+minage	0
+maxage	3
+minlength	3
+maxlength	20
+dl	0.5
+sdev	1
+normalcondfile	PRE/Modelfiles/anch.normalcond
+doesmigrate	0
+;
+doesmature	0
+;
+doesmove	0
+;
+doesrenew	1
+minlength	3
+maxlength	15
+normalcondfile	PRE/Modelfiles/anch.rec
+doesspawn	0
+;
+doesstray	0
+;

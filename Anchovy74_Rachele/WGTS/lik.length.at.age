@@ -1,0 +1,52 @@
+; Gadget version 2.1.06 running on compute-6-23 Thu Oct 27 18:09:17 2016
+; Listing of the switches used in the current Gadget run
+Linf	anchgrowergrowthcalcHtimevariable	
+kappa	anchgrowergrowthcalcHtimevariable	
+alpha	anchgrowergrowthcalcHtimevariable	
+beta	anchgrowergrowthcalcHtimevariable	
+bbeta	anchgrower	
+init0	anchinitialcondmeandata	
+init1	anchinitialcondmeandata	
+init2	anchinitialcondmeandata	
+init3	anchinitialcondmeandata	
+rec01	anchrenewaldata	
+recl	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	
+sdrecl4	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	
+rec02	anchrenewaldata	
+rec03	anchrenewaldata	
+rec04	anchrenewaldata	
+rec05	anchrenewaldata	
+rec06	anchrenewaldata	
+rec07	anchrenewaldata	
+rec08	anchrenewaldata	
+rec09	anchrenewaldata	
+rec10	anchrenewaldata	
+rec11	anchrenewaldata	
+rec12	anchrenewaldata	
+rec13	anchrenewaldata	
+rec14	anchrenewaldata	
+rec15	anchrenewaldata	
+anchalpha01	fleetseinepredatorseinesuitabilityforanchtimevariable	
+anchL5001	fleetseinepredatorseinesuitabilityforanchtimevariable	
+constanteco	fleetECOpredatorECOsuitabilityforanchtimevariable	
+l50eco	fleetECOpredatorECOsuitabilityforanchtimevariable	
+constantpel	fleetPELpredatorPELsuitabilityforanchtimevariable	
+l50pel	fleetPELpredatorPELsuitabilityforanchtimevariable	
+;
+; Listing of the likelihood components used in the current Gadget run
+;
+; Component	Type	Weight
+length.at.age	4	1.05787e-07
+catches.agedist	3	0.0187793
+ldist.ecocadiz	3	0.766284
+ldist.pelago	3	0.507872
+ldist.seine	3	0.0773395
+ecocadiz.survey	1	0.197707
+pelagonumber.survey	1	0.184162
+sarnumber.survey	1	1.12486
+understocking	2	1e+08
+bounds	8	0.5
+;
+; Listing of the output from the likelihood components for the current Gadget run
+;
+0	        19   0.489432    2.9e-05     3.3438    4999.97   0.323638    1.18884  0.0119022 0.00109487     152.37    10.4337    1.96992    18.1688    119.204    29.0998    51.9234     75.954    68.0069    10.6535    33.5665    147.355    6.91963    52.3088    117.912    68.6539    436.921        1.1    7.41057   0.296648    11.6462   0.203916    8.58234 		7.588e+10    26.28   0.2093   0.6177    13.54    5.194    5.275   0.5319        0        0 		   8032.10148353992

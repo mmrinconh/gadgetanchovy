@@ -1,0 +1,52 @@
+; Gadget version 2.1.06 running on compute-6-23 Thu Oct 27 18:16:07 2016
+; Listing of the switches used in the current Gadget run
+Linf	anchgrowergrowthcalcHtimevariable	
+kappa	anchgrowergrowthcalcHtimevariable	
+alpha	anchgrowergrowthcalcHtimevariable	
+beta	anchgrowergrowthcalcHtimevariable	
+bbeta	anchgrower	
+init0	anchinitialcondmeandata	
+init1	anchinitialcondmeandata	
+init2	anchinitialcondmeandata	
+init3	anchinitialcondmeandata	
+rec01	anchrenewaldata	
+recl	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	
+sdrecl4	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	
+rec02	anchrenewaldata	
+rec03	anchrenewaldata	
+rec04	anchrenewaldata	
+rec05	anchrenewaldata	
+rec06	anchrenewaldata	
+rec07	anchrenewaldata	
+rec08	anchrenewaldata	
+rec09	anchrenewaldata	
+rec10	anchrenewaldata	
+rec11	anchrenewaldata	
+rec12	anchrenewaldata	
+rec13	anchrenewaldata	
+rec14	anchrenewaldata	
+rec15	anchrenewaldata	
+anchalpha01	fleetseinepredatorseinesuitabilityforanchtimevariable	
+anchL5001	fleetseinepredatorseinesuitabilityforanchtimevariable	
+constanteco	fleetECOpredatorECOsuitabilityforanchtimevariable	
+l50eco	fleetECOpredatorECOsuitabilityforanchtimevariable	
+constantpel	fleetPELpredatorPELsuitabilityforanchtimevariable	
+l50pel	fleetPELpredatorPELsuitabilityforanchtimevariable	
+;
+; Listing of the likelihood components used in the current Gadget run
+;
+; Component	Type	Weight
+bounds	8	0.5
+understocking	2	1e+08
+ldist.seine	3	1
+ldist.ecocadiz	3	1
+catches.agedist	3	1
+pelagonumber.survey	1	1
+ldist.pelago	3	1
+sarnumber.survey	1	1
+length.at.age	4	1
+ecocadiz.survey	1	1
+;
+; Listing of the output from the likelihood components for the current Gadget run
+;
+0	        19  0.0500004    2.9e-05     3.3438   0.327178   0.536356          2   0.142388    1.09999    109.882    11.5509    1.42254    51.4602    58.1325    70.3844    92.9625    95.0884    33.8404    35.7235    33.4625    85.8887    57.8244    55.2914    148.467    999.992     912.11        0.8    9.65067    0.23441    13.7324        0.2     10.355 		       0        0    2.704   0.1543    17.65    1.541   0.4907 0.002246 8.023e+10   0.1123 		   80227950527.5176

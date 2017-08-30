@@ -1,0 +1,13 @@
+; main file for gadget - created in Rgadget
+; ./PRE/main.pre - Fri Oct 28 11:35:53 2016
+timefile ./PRE/time.pre
+areafile ./PRE/area
+printfiles ./PRE/printfile
+[stock]
+stockfiles ./PRE/anch
+[tagging]
+[otherfood]
+[fleet]
+fleetfiles Modelfiles/fleet.fleet	./PRE/fleet
+[likelihood]
+likelihoodfiles ;

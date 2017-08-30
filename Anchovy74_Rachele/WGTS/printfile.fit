@@ -1,0 +1,68 @@
+; gadget printfile, created in 2016-10-27
+[component]
+type	likelihoodsummaryprinter
+printfile	WGTS/out.fit/likelihoodsummary
+;
+[component]
+type	likelihoodprinter
+likelihood	length.at.age
+printfile	WGTS/out.fit/length.at.age
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.seine
+printfile	WGTS/out.fit/ldist.seine
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.ecocadiz
+printfile	WGTS/out.fit/ldist.ecocadiz
+;
+[component]
+type	likelihoodprinter
+likelihood	catches.agedist
+printfile	WGTS/out.fit/catches.agedist
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.pelago
+printfile	WGTS/out.fit/ldist.pelago
+;
+[component]
+type	likelihoodprinter
+likelihood	pelagonumber.survey
+printfile	WGTS/out.fit/pelagonumber.survey
+;
+[component]
+type	likelihoodprinter
+likelihood	sarnumber.survey
+printfile	WGTS/out.fit/sarnumber.survey
+;
+[component]
+type	likelihoodprinter
+likelihood	ecocadiz.survey
+printfile	WGTS/out.fit/ecocadiz.survey
+;
+[component]
+type	stockstdprinter
+stockname	anch
+printfile	WGTS/out.fit/anch.std
+yearsandsteps	 all 1
+[component]
+type	stockprinter
+stocknames	anch
+areaaggfile	WGTS/print.aggfiles/anch.area.agg
+ageaggfile	WGTS/print.aggfiles/anch.allages.agg
+lenaggfile	WGTS/print.aggfiles/anch.len.agg
+printfile	WGTS/out.fit/anch.full
+yearsandsteps	 all 1
+[component]
+type	predatorpreyprinter
+predatornames	seine ECO PEL
+preynames	anch
+areaaggfile	WGTS/print.aggfiles/anch.area.agg
+ageaggfile	WGTS/print.aggfiles/anch.age.agg
+lenaggfile	WGTS/print.aggfiles/anch.alllen.agg
+printfile	WGTS/out.fit/anch.prey
+yearsandsteps	all all
+;

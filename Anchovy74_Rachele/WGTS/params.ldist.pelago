@@ -1,0 +1,40 @@
+; Gadget version 2.1.06 running on compute-6-23 Thu Oct 27 18:06:11 2016
+; Simulated Annealing algorithm ran for 63800 function evaluations
+; and stopped when the likelihood value was 1870.4392
+; because the convergence criteria were met
+; Hooke & Jeeves algorithm ran for 1728 function evaluations
+; and stopped when the likelihood value was 1870.4392
+; because the convergence criteria were met
+switch	value		lower	upper	optimise
+Linf	          19	      15       20        0
+kappa	  0.95691875	    0.05      1.2        1
+alpha	     2.9e-05	   1e-05       10        0
+beta	      3.3438	  0.0001       10        0
+bbeta	   2.0596533	     0.1     5000        1
+init0	1.0000017e-06	   1e-06        2        1
+init1	   1.4778416	   1e-06        2        1
+init2	 0.045272333	   1e-06      1.5        1
+init3	   1.0999948	   1e-07      1.1        1
+rec01	   177.59928	   1e-06     1000        1
+recl	   10.486575	       3       15        1
+sdrecl4	   1.5577005	     0.5        3        1
+rec02	   104.23111	   1e-06     1000        1
+rec03	   13.804518	   1e-06     1000        1
+rec04	   53.164672	   1e-06     1000        1
+rec05	    56.39886	   1e-06     1000        1
+rec06	   107.23686	   1e-06     1000        1
+rec07	    57.67765	   1e-06     1000        1
+rec08	   76.404599	   1e-06     1000        1
+rec09	   230.52382	   1e-06     1000        1
+rec10	1.0026819e-06	   1e-06     1000        1
+rec11	   30.598717	   1e-06     1000        1
+rec12	   87.857694	   1e-06     1000        1
+rec13	   999.99882	   1e-06     1000        1
+rec14	  0.60744116	   1e-06     1000        1
+rec15	   199.83599	   1e-06     1000        1
+anchalpha01	  0.80000046	     0.8      1.1        1
+anchL5001	   10.552874	       6       15        1
+constanteco	   1.4402664	     0.2      1.5        1
+l50eco	   3.1337107	       2       20        1
+constantpel	   1.4999831	     0.2      1.5        1
+l50pel	   2.0000357	       2       20        1

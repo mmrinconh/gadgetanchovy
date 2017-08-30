@@ -1,0 +1,21 @@
+[fleetcomponent]
+linearfleet	ECO.pre
+livesonareas	1
+multiplicative	#rgadget.effort
+suitability
+anch	function	expsuitfuncl50	#constanteco #l50eco
+amount	./PRE/fleet.pre
+[fleetcomponent]
+linearfleet	PEL.pre
+livesonareas	1
+multiplicative	#rgadget.effort
+suitability
+anch	function	expsuitfuncl50	#constantpel #l50pel
+amount	./PRE/fleet.pre
+[fleetcomponent]
+linearfleet	seine.pre
+livesonareas	1
+multiplicative	#rgadget.effort
+suitability
+anch	function	expsuitfuncl50	#anchalpha01 #anchL5001
+amount	./PRE/fleet.pre

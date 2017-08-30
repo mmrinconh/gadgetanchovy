@@ -1,0 +1,22 @@
+[component]
+type		predatorpreyprinter
+predatornames		seine ECO PEL seine.pre ECO.pre PEL.pre
+preynames		anch
+areaaggfile      ./PRE/Aggfiles/anch.area.agg
+ageaggfile       ./PRE/Aggfiles/anch.allages.agg
+lenaggfile       ./PRE/Aggfiles/anch.alllen.agg
+printfile        ./PRE/out/catch.anch.lw
+yearsandsteps    all all
+[component]
+type             stockprinter
+stocknames       anch
+areaaggfile      ./PRE/Aggfiles/anch.area.agg
+ageaggfile       ./PRE/Aggfiles/anch.allages.agg
+lenaggfile       ./PRE/Aggfiles/anch.len.agg
+printfile        ./PRE/out/anch.lw
+printatstart     0
+yearsandsteps    all 1
+;
+[component]
+type	likelihoodsummaryprinter
+printfile	.jnk

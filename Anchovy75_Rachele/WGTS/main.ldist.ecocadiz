@@ -1,0 +1,13 @@
+; main file for gadget - created in Rgadget
+; WGTS/main.ldist.ecocadiz - Mon Oct 31 13:09:45 2016
+timefile Modelfiles/time
+areafile Modelfiles/area
+printfiles ; no printfile supplied
+[stock]
+stockfiles Modelfiles/anch
+[tagging]
+[otherfood]
+[fleet]
+fleetfiles Modelfiles/fleet.fleet
+[likelihood]
+likelihoodfiles WGTS/likelihood.ldist.ecocadiz

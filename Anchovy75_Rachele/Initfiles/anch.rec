@@ -1,0 +1,31 @@
+; year	step area age num len sd len	cond	
+
+1988	4	1	0	(*	1000	(*  #rec88))	#recl	#sdrecl4	1
+1989	4	1	0	(*	1000	(*  #rec89))	#recl	#sdrecl4	1
+1990	4	1	0	(*	1000	(*  #rec90))	#recl	#sdrecl4	1
+1991	4	1	0	(*	1000	(*  #rec91))	#recl	#sdrecl4	1
+1992	4	1	0	(*	1000	(*  #rec92))	#recl	#sdrecl4	1
+1993	4	1	0	(*	1000	(*  #rec93))	#recl	#sdrecl4	1
+1994	4	1	0	(*	1000	(*  #rec94))	#recl	#sdrecl4	1
+1995	4	1	0	(*	1000	(*  #rec95))	#recl	#sdrecl4	1
+1996	4	1	0	(*	1000	(*  #rec96))	#recl	#sdrecl4	1
+1997	4	1	0	(*	1000	(*  #rec97))	#recl	#sdrecl4	1
+1998	4	1	0	(*	1000	(*  #rec98))	#recl	#sdrecl4	1
+1999	4	1	0	(*	1000	(*  #rec99))	#recl	#sdrecl4	1
+2000	4	1	0	(*	1000	(*  #rec00))	#recl	#sdrecl4	1
+2001	4	1	0	(*	1000	(*  #rec01))	#recl	#sdrecl4	1
+2002	4	1	0	(*	1000	(*  #rec02))	#recl	#sdrecl4	1
+2003	4	1	0	(*	1000	(*  #rec03))	#recl	#sdrecl4	1
+2004	4	1	0	(*	1000	(*  #rec04))	#recl	#sdrecl4	1
+2005	4	1	0	(*	1000	(*  #rec05))	#recl	#sdrecl4	1
+2006	4	1	0	(*	1000	(*  #rec06))	#recl	#sdrecl4	1
+2007	4	1	0	(*	1000	(*  #rec07))	#recl	#sdrecl4	1
+2008	4	1	0	(*	1000	(*  #rec08))	#recl	#sdrecl4	1
+2009	4	1	0	(*	1000	(*  #rec09))	#recl	#sdrecl4	1
+2010	4	1	0	(*	1000	(*  #rec10))	#recl	#sdrecl4	1
+2011	4	1	0	(*	1000	(*  #rec11))	#recl	#sdrecl4	1
+2012	4	1	0	(*	1000	(*  #rec12))	#recl	#sdrecl4	1
+2013	4	1	0	(*	1000	(*  #rec13))	#recl	#sdrecl4	1
+2014	4	1	0	(*	1000	(*  #rec14))	#recl	#sdrecl4	1
+2015	4	1	0	(*	1000	(*  #rec15))	#recl	#sdrecl4	1
+

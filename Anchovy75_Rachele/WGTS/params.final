@@ -1,0 +1,53 @@
+; Gadget version 2.1.06 running on compute-6-23 Mon Oct 31 13:27:29 2016
+; Simulated Annealing algorithm ran for 800001 function evaluations
+; and stopped when the likelihood value was 4411.8795
+; because the maximum number of function evaluations was reached
+; Hooke & Jeeves algorithm ran for 98821 function evaluations
+; and stopped when the likelihood value was 3716.4537
+; because the convergence criteria were met
+switch	value		lower	upper	optimise
+Linf	          19	      15       20        0
+kappa	        0.05	    0.05      1.2        1
+alpha	     2.9e-05	   1e-05       10        0
+beta	      3.3438	  0.0001       10        0
+bbeta	         0.1	     0.1     5000        1
+init0	   1.9840477	   1e-06        2        1
+init1	  0.80544288	   1e-06        2        1
+init2	 3.44869e-06	   1e-06      1.5        1
+init3	   1.0999995	   1e-07      1.1        1
+rec88	   116.03672	   1e-06     1000        1
+recl	   11.112807	       3       15        1
+sdrecl4	   1.7505799	     0.5        3        1
+rec89	   161.62831	   1e-06     1000        1
+rec90	   116.92369	   1e-06     1000        1
+rec91	   48.542914	   1e-06     1000        1
+rec92	   27.627864	   1e-06     1000        1
+rec93	   18.011822	   1e-06     1000        1
+rec94	   7.2760333	   1e-06     1000        1
+rec95	   89.683367	   1e-06     1000        1
+rec96	   186.99445	   1e-06     1000        1
+rec97	    166.0754	   1e-06     1000        1
+rec98	   114.88943	   1e-06     1000        1
+rec99	   61.029372	   1e-06     1000        1
+rec00	   122.97482	   1e-06     1000        1
+rec01	    99.96291	   1e-06     1000        1
+rec02	   52.713093	   1e-06     1000        1
+rec03	   87.486429	   1e-06     1000        1
+rec04	   78.516645	   1e-06     1000        1
+rec05	   125.76333	   1e-06     1000        1
+rec06	   108.40187	   1e-06     1000        1
+rec07	   23.789032	   1e-06     1000        1
+rec08	   82.697789	   1e-06     1000        1
+rec09	   40.927985	   1e-06     1000        1
+rec10	   185.50188	   1e-06     1000        1
+rec11	0.0025821429	   1e-06     1000        1
+rec12	   68.959333	   1e-06     1000        1
+rec13	   197.29447	   1e-06     1000        1
+rec14	        1000	   1e-06     1000        1
+rec15	   808.64895	   1e-06     1000        1
+anchalpha01	         0.8	     0.8      1.1        1
+anchL5001	   8.7763966	       6       15        1
+constanteco	  0.29980505	     0.2      1.5        1
+l50eco	   12.843256	       2       20        1
+constantpel	  0.27493947	     0.2      1.5        1
+l50pel	   10.879541	       2       20        1

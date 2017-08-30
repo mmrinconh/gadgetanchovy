@@ -1,0 +1,65 @@
+; Gadget version 2.1.06 running on compute-6-23 Mon Oct 31 13:17:51 2016
+; Listing of the switches used in the current Gadget run
+Linf	anchgrowergrowthcalcHtimevariable	
+kappa	anchgrowergrowthcalcHtimevariable	
+alpha	anchgrowergrowthcalcHtimevariable	
+beta	anchgrowergrowthcalcHtimevariable	
+bbeta	anchgrower	
+init0	anchinitialcondmeandata	
+init1	anchinitialcondmeandata	
+init2	anchinitialcondmeandata	
+init3	anchinitialcondmeandata	
+rec88	anchrenewaldata	
+recl	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	
+sdrecl4	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	anchrenewaldata	
+rec89	anchrenewaldata	
+rec90	anchrenewaldata	
+rec91	anchrenewaldata	
+rec92	anchrenewaldata	
+rec93	anchrenewaldata	
+rec94	anchrenewaldata	
+rec95	anchrenewaldata	
+rec96	anchrenewaldata	
+rec97	anchrenewaldata	
+rec98	anchrenewaldata	
+rec99	anchrenewaldata	
+rec00	anchrenewaldata	
+rec01	anchrenewaldata	
+rec02	anchrenewaldata	
+rec03	anchrenewaldata	
+rec04	anchrenewaldata	
+rec05	anchrenewaldata	
+rec06	anchrenewaldata	
+rec07	anchrenewaldata	
+rec08	anchrenewaldata	
+rec09	anchrenewaldata	
+rec10	anchrenewaldata	
+rec11	anchrenewaldata	
+rec12	anchrenewaldata	
+rec13	anchrenewaldata	
+rec14	anchrenewaldata	
+rec15	anchrenewaldata	
+anchalpha01	fleetseinepredatorseinesuitabilityforanchtimevariable	
+anchL5001	fleetseinepredatorseinesuitabilityforanchtimevariable	
+constanteco	fleetECOpredatorECOsuitabilityforanchtimevariable	
+l50eco	fleetECOpredatorECOsuitabilityforanchtimevariable	
+constantpel	fleetPELpredatorPELsuitabilityforanchtimevariable	
+l50pel	fleetPELpredatorPELsuitabilityforanchtimevariable	
+;
+; Listing of the likelihood components used in the current Gadget run
+;
+; Component	Type	Weight
+length.at.age	4	4.27533e-08
+catches.agedist	3	0.00875657
+ldist.ecocadiz	3	0.75188
+ldist.pelago	3	0.430849
+ldist.seine	3	0.0416667
+ecocadiz.survey	1	0.197863
+pelagonumber.survey	1	0.129249
+sarnumber.survey	1	0.107782
+understocking	2	1e+08
+bounds	8	0.5
+;
+; Listing of the output from the likelihood components for the current Gadget run
+;
+0	        19   0.640035    2.9e-05     3.3438    57.8936    1.07765   0.269712  0.0510858 0.000523918     84.072    9.60314   0.815596    82.3032    999.989    477.345     121.68    291.067    129.616    1.79109    61.0342    176.291    999.987 1.52353e-05    195.629    286.994    144.819    193.122    160.245    229.268    302.936     136.55    71.7946    96.6133    314.401    79.4924    78.8834    579.187    344.028    819.952   0.919515    8.76661   0.331584    10.7273        1.5     5.3988 		2.11e+11     60.9   0.4275    1.162    28.58   0.4406    1.115    4.783 0.0007103        0 		   80053.4709087481

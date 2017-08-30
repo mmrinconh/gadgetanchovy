@@ -1,0 +1,6 @@
+; initial (normalcond) file for anch created using rgadget at 2016-10-31
+; -age-area-age.factor-area.factor-mean-stddev-relcond
+0	1	( * 60000 #init0 )	1	5	1.5	1
+1	1	( * 60000 #init1 )	1	11.14	1.5	1
+2	1	( * 60000 #init2 )	1	15.59	1.5	1
+3	1	( * 0.000001 #init3 )	1	17.42	1.5	1

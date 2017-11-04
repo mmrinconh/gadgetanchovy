@@ -1,0 +1,125 @@
+; year	step area age num len sd len	cond
+1979	3	1	0	(*	1000	#rec79)	#reclm	#sdreclm	1
+1980	3	1	0	(*	1000	#rec80)	#reclm	#sdreclm	1
+1981	3	1	0	(*	1000	#rec81)	#reclm	#sdreclm	1
+1982	3	1	0	(*	1000	#rec82)	#reclm	#sdreclm	1
+1983	3	1	0	(*	1000	#rec83)	#reclm	#sdreclm	1
+1984	3	1	0	(*	1000	#rec84)	#reclm	#sdreclm	1
+1985	3	1	0	(*	1000	#rec85)	#reclm	#sdreclm	1
+1986	3	1	0	(*	1000	#rec86)	#reclm	#sdreclm	1
+1987	3	1	0	(*	1000	#rec87)	#reclm	#sdreclm	1	
+1988	3	1	0	(*	1000	(* #P388 #rec88))	#recl	#sdrecl	1
+1989	3	1	0	(*	1000	(* #P389 #rec89))	#recl	#sdrecl	1
+1990	3	1	0	(*	1000	(* #P390 #rec90))	#recl	#sdrecl	1
+1991	3	1	0	(*	1000	(* #P391 #rec91))	#recl	#sdrecl	1
+1992	3	1	0	(*	1000	(* #P392 #rec92))	#recl	#sdrecl	1
+1993	3	1	0	(*	1000	(* #P393 #rec93))	#recl	#sdrecl	1
+1994	3	1	0	(*	1000	(* #P394 #rec94))	#recl	#sdrecl	1
+1995	3	1	0	(*	1000	(* #P395 #rec95))	#recl	#sdrecl	1
+1996	3	1	0	(*	1000	(* #P396 #rec96))	#recl	#sdrecl	1
+1997	3	1	0	(*	1000	(* #P397 #rec97))	#recl	#sdrecl	1
+1998	3	1	0	(*	1000	(* #P398 #rec98))	#recl	#sdrecl	1
+1999	3	1	0	(*	1000	(* #P399 #rec99))	#recl	#sdrecl	1
+2000	3	1	0	(*	1000	(* #P300 #rec00))	#recl	#sdrecl	1
+2001	3	1	0	(*	1000	(* #P301 #rec01))	#recl	#sdrecl	1
+2002	3	1	0	(*	1000	(* #P302 #rec02))	#recl	#sdrecl	1
+2003	3	1	0	(*	1000	(* #P303 #rec03))	#recl	#sdrecl	1
+2004	3	1	0	(*	1000	(* #P304 #rec04))	#recl	#sdrecl	1
+2005	3	1	0	(*	1000	(* #P305 #rec05))	#recl	#sdrecl	1
+2006	3	1	0	(*	1000	(* #P306 #rec06))	#recl	#sdrecl	1
+2007	3	1	0	(*	1000	(* #P307 #rec07))	#recl	#sdrecl	1
+2008	3	1	0	(*	1000	(* #P308 #rec08))	#recl	#sdrecl	1
+2009	3	1	0	(*	1000	(* #P309 #rec09))	#recl	#sdrecl	1
+2010	3	1	0	(*	1000	(* #P310 #rec10))	#recl	#sdrecl	1
+2011	3	1	0	(*	1000	(* #P311 #rec11))	#recl	#sdrecl	1
+2012	3	1	0	(*	1000	(* #P312 #rec12))	#recl	#sdrecl	1
+2013	3	1	0	(*	1000	(* #P313 #rec13))	#recl	#sdrecl	1
+2014	3	1	0	(*	1000	(* #P314 #rec14))	#recl	#sdrecl	1
+1988	4	1	0	(*	1000	(* #P488 #rec88))	#recl	#sdrecl4	1
+1989	4	1	0	(*	1000	(* #P489 #rec89))	#recl	#sdrecl4	1
+1990	4	1	0	(*	1000	(* #P490 #rec90))	#recl	#sdrecl4	1
+1991	4	1	0	(*	1000	(* #P491 #rec91))	#recl	#sdrecl4	1
+1992	4	1	0	(*	1000	(* #P492 #rec92))	#recl	#sdrecl4	1
+1993	4	1	0	(*	1000	(* #P493 #rec93))	#recl	#sdrecl4	1
+1994	4	1	0	(*	1000	(* #P494 #rec94))	#recl	#sdrecl4	1
+1995	4	1	0	(*	1000	(* #P495 #rec95))	#recl	#sdrecl4	1
+1996	4	1	0	(*	1000	(* #P496 #rec96))	#recl	#sdrecl4	1
+1997	4	1	0	(*	1000	(* #P497 #rec97))	#recl	#sdrecl4	1
+1998	4	1	0	(*	1000	(* #P498 #rec98))	#recl	#sdrecl4	1
+1999	4	1	0	(*	1000	(* #P499 #rec99))	#recl	#sdrecl4	1
+2000	4	1	0	(*	1000	(* #P400 #rec00))	#recl	#sdrecl4	1
+2001	4	1	0	(*	1000	(* #P401 #rec01))	#recl	#sdrecl4	1
+2002	4	1	0	(*	1000	(* #P402 #rec02))	#recl	#sdrecl4	1
+2003	4	1	0	(*	1000	(* #P403 #rec03))	#recl	#sdrecl4	1
+2004	4	1	0	(*	1000	(* #P404 #rec04))	#recl	#sdrecl4	1
+2005	4	1	0	(*	1000	(* #P405 #rec05))	#recl	#sdrecl4	1
+2006	4	1	0	(*	1000	(* #P406 #rec06))	#recl	#sdrecl4	1
+2007	4	1	0	(*	1000	(* #P407 #rec07))	#recl	#sdrecl4	1
+2008	4	1	0	(*	1000	(* #P408 #rec08))	#recl	#sdrecl4	1
+2009	4	1	0	(*	1000	(* #P409 #rec09))	#recl	#sdrecl4	1
+2010	4	1	0	(*	1000	(* #P410 #rec10))	#recl	#sdrecl4	1
+2011	4	1	0	(*	1000	(* #P411 #rec11))	#recl	#sdrecl4	1
+2012	4	1	0	(*	1000	(* #P412 #rec12))	#recl	#sdrecl4	1
+2013	4	1	0	(*	1000	(* #P413 #rec13))	#recl	#sdrecl4	1
+2014	4	1	0	(*	1000	(* #P414 #rec14))	#recl	#sdrecl4	1
+1989	2	1	1	(*	1000	(* #P288 #rec88))	#recl	#sdrecl2	1
+1990	2	1	1	(*	1000	(* #P289 #rec89))	#recl	#sdrecl2	1
+1991	2	1	1	(*	1000	(* #P290 #rec90))	#recl	#sdrecl2	1
+1992	2	1	1	(*	1000	(* #P291 #rec91))	#recl	#sdrecl2	1
+1993	2	1	1	(*	1000	(* #P292 #rec92))	#recl	#sdrecl2	1
+1994	2	1	1	(*	1000	(* #P293 #rec93))	#recl	#sdrecl2	1
+1995	2	1	1	(*	1000	(* #P294 #rec94))	#recl	#sdrecl2	1
+1996	2	1	1	(*	1000	(* #P295 #rec95))	#recl	#sdrecl2	1
+1997	2	1	1	(*	1000	(* #P296 #rec96))	#recl	#sdrecl2	1
+1998	2	1	1	(*	1000	(* #P297 #rec97))	#recl	#sdrecl2	1
+1999	2	1	1	(*	1000	(* #P298 #rec98))	#recl	#sdrecl2	1
+2000	2	1	1	(*	1000	(* #P299 #rec99))	#recl	#sdrecl2	1
+2001	2	1	1	(*	1000	(* #P200 #rec00))	#recl	#sdrecl2	1
+2002	2	1	1	(*	1000	(* #P201 #rec01))	#recl	#sdrecl2	1
+2003	2	1	1	(*	1000	(* #P202 #rec02))	#recl	#sdrecl2	1
+2004	2	1	1	(*	1000	(* #P203 #rec03))	#recl	#sdrecl2	1
+2005	2	1	1	(*	1000	(* #P204 #rec04))	#recl	#sdrecl2	1
+2006	2	1	1	(*	1000	(* #P205 #rec05))	#recl	#sdrecl2	1
+2007	2	1	1	(*	1000	(* #P206 #rec06))	#recl	#sdrecl2	1
+2008	2	1	1	(*	1000	(* #P207 #rec07))	#recl	#sdrecl2	1
+2009	2	1	1	(*	1000	(* #P208 #rec08))	#recl	#sdrecl2	1
+2010	2	1	1	(*	1000	(* #P209 #rec09))	#recl	#sdrecl2	1
+2011	2	1	1	(*	1000	(* #P210 #rec10))	#recl	#sdrecl2	1
+2012	2	1	1	(*	1000	(* #P211 #rec11))	#recl	#sdrecl2	1
+2013	2	1	1	(*	1000	(* #P212 #rec12))	#recl	#sdrecl2	1
+2014	2	1	1	(*	1000	(* #P213 #rec13))	#recl	#sdrecl2	1
+1989	1	1	1	(*	1000	(* #P188 #rec88))	#recl	#sdrecl1	1
+1990	1	1	1	(*	1000	(* #P189 #rec89))	#recl	#sdrecl1	1
+1991	1	1	1	(*	1000	(* #P190 #rec90))	#recl	#sdrecl1	1
+1992	1	1	1	(*	1000	(* #P191 #rec91))	#recl	#sdrecl1	1
+1993	1	1	1	(*	1000	(* #P192 #rec92))	#recl	#sdrecl1	1
+1994	1	1	1	(*	1000	(* #P193 #rec93))	#recl	#sdrecl1	1
+1995	1	1	1	(*	1000	(* #P194 #rec94))	#recl	#sdrecl1	1
+1996	1	1	1	(*	1000	(* #P195 #rec95))	#recl	#sdrecl1	1
+1997	1	1	1	(*	1000	(* #P196 #rec96))	#recl	#sdrecl1	1
+1998	1	1	1	(*	1000	(* #P197 #rec97))	#recl	#sdrecl1	1
+1999	1	1	1	(*	1000	(* #P198 #rec98))	#recl	#sdrecl1	1
+2000	1	1	1	(*	1000	(* #P199 #rec99))	#recl	#sdrecl1	1
+2001	1	1	1	(*	1000	(* #P100 #rec00))	#recl	#sdrecl1	1
+2002	1	1	1	(*	1000	(* #P101 #rec01))	#recl	#sdrecl1	1
+2003	1	1	1	(*	1000	(* #P102 #rec02))	#recl	#sdrecl1	1
+2004	1	1	1	(*	1000	(* #P103 #rec03))	#recl	#sdrecl1	1
+2005	1	1	1	(*	1000	(* #P104 #rec04))	#recl	#sdrecl1	1
+2006	1	1	1	(*	1000	(* #P105 #rec05))	#recl	#sdrecl1	1
+2007	1	1	1	(*	1000	(* #P106 #rec06))	#recl	#sdrecl1	1
+2008	1	1	1	(*	1000	(* #P107 #rec07))	#recl	#sdrecl1	1
+2009	1	1	1	(*	1000	(* #P108 #rec08))	#recl	#sdrecl1	1
+2010	1	1	1	(*	1000	(* #P109 #rec09))	#recl	#sdrecl1	1
+2011	1	1	1	(*	1000	(* #P110 #rec10))	#recl	#sdrecl1	1
+2012	1	1	1	(*	1000	(* #P111 #rec11))	#recl	#sdrecl1	1
+2013	1	1	1	(*	1000	(* #P112 #rec12))	#recl	#sdrecl1	1
+2014	1	1	1	(*	1000	(* #P113 #rec13))	#recl	#sdrecl1	1
+2015	1	1	1	(*	1000	(* #P114 #rec14))	#recl	#sdrecl1	1
+2015	2	1	1	(*	1000	(* #P214 #rec14))	#recl	#sdrecl2	1
+2015	3	1	0	(*	1000	(* #P315 #rec15))	#recl	#sdrecl		1
+2015	4	1	0	(*	1000	(* #P415 #rec15))	#recl	#sdrecl4	1
+2016	1	1	1	(*	1000	(* #P115 #rec15))	#recl	#sdrecl1	1
+2016	2	1	1	(*	1000	(* #P215 #rec15))	#recl	#sdrecl2	1
+2016	3	1	0	(*	1000	(* #P316 #rec16))	#recl	#sdrecl		1
+2016	4	1	0	(*	1000	(* #P416 #rec16))	#recl	#sdrecl4	1
+

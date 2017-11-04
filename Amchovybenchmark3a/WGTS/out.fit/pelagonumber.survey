@@ -1,0 +1,18 @@
+; Gadget version 2.2.00-BETA running on c6601 Fri Oct 20 17:04:40 2017
+; Likelihood output file for the likelihood component pelagonumber.survey
+; year-step-area-label-number
+1999    1        IXa        all    5290489.7
+2001    1        IXa        all    9232276.1
+2002    1        IXa        all    5682995.9
+2003    1        IXa        all    6189216.9
+2005    2        IXa        all    2619993.8
+2006    2        IXa        all    5433317.7
+2007    2        IXa        all    7659052.3
+2008    2        IXa        all    5112458.4
+2009    2        IXa        all    3937477.6
+2010    2        IXa        all    2519277.4
+2014    2        IXa        all    6838136.5
+2015    2        IXa        all    5701180.8
+2016    2        IXa        all     11371942
+; Regression information for area IXa
+; all intercept 1.5208547 slope 1 sse 0.92735069

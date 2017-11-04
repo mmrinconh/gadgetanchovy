@@ -1,0 +1,9 @@
+; Gadget version 2.2.00-BETA running on c6601 Fri Oct 20 17:04:40 2017
+; Likelihood output file for the likelihood component sarnumber.survey
+; year-step-area-label-number
+1998    4        IXa        all      6894115
+2000    4        IXa        all    7611363.3
+2001    4        IXa        all    5747251.6
+2007    4        IXa        all      5341422
+; Regression information for area IXa
+; all intercept 1.4928584 slope 1 sse 5.3737024e-06

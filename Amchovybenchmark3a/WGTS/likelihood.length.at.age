@@ -1,0 +1,151 @@
+; Likelihood file - created in Rgadget
+; WGTS/likelihood.length.at.age - 2017-10-20
+[component]
+name		length.at.age
+weight		7.27272727272727e-08
+type		catchstatistics
+datafile		Data/catchstatistics.length.at.age.lengthnostddev
+function		lengthnostddev
+areaaggfile		Aggfiles/catchstatistics.length.at.age.area.agg
+ageaggfile		Aggfiles/catchstatistics.length.at.age.age.agg
+fleetnames		seine
+stocknames		anch
+;
+[component]
+name		catches.agedist
+weight		0.011953143676787
+type		catchdistribution
+datafile		Data/catchdistribution.catches.agedist.sumofsquares
+function		sumofsquares
+aggregationlevel		0
+overconsumption		0
+epsilon		10
+areaaggfile		Aggfiles/catchdistribution.catches.agedist.area.agg
+ageaggfile		Aggfiles/catchdistribution.catches.agedist.age.agg
+lenaggfile		Aggfiles/catchdistribution.catches.agedist.len.agg
+fleetnames		seine
+stocknames		anch
+;
+[component]
+name		ldist.ecocadiz
+weight		1.23183050012318
+type		catchdistribution
+datafile		Data/catchdistribution.ldist.ecocadiz.sumofsquares
+function		sumofsquares
+aggregationlevel		0
+overconsumption		0
+epsilon		10
+areaaggfile		Aggfiles/catchdistribution.ldist.ecocadiz.area.agg
+ageaggfile		Aggfiles/catchdistribution.ldist.ecocadiz.age.agg
+lenaggfile		Aggfiles/catchdistribution.ldist.ecocadiz.len.agg
+fleetnames		ECO
+stocknames		anch
+;
+[component]
+name		ldist.ecocadizrec
+weight		1.34138162307176
+type		catchdistribution
+datafile		Data/catchdistribution.ldist.ecocadizrec.sumofsquares
+function		sumofsquares
+aggregationlevel		0
+overconsumption		0
+epsilon		10
+areaaggfile		Aggfiles/catchdistribution.ldist.ecocadizrec.area.agg
+ageaggfile		Aggfiles/catchdistribution.ldist.ecocadizrec.age.agg
+lenaggfile		Aggfiles/catchdistribution.ldist.ecocadizrec.len.agg
+fleetnames		ECOREC
+stocknames		anch
+;
+[component]
+name		ldist.pelago
+weight		0.533902829684997
+type		catchdistribution
+datafile		Data/catchdistribution.ldist.pelago.sumofsquares
+function		sumofsquares
+aggregationlevel		0
+overconsumption		0
+epsilon		10
+areaaggfile		Aggfiles/catchdistribution.ldist.pelago.area.agg
+ageaggfile		Aggfiles/catchdistribution.ldist.pelago.age.agg
+lenaggfile		Aggfiles/catchdistribution.ldist.pelago.len.agg
+fleetnames		PEL
+stocknames		anch
+;
+[component]
+name		ldist.seine
+weight		0.0434216239687364
+type		catchdistribution
+datafile		Data/catchdistribution.ldist.seine.sumofsquares
+function		sumofsquares
+aggregationlevel		0
+overconsumption		0
+epsilon		10
+areaaggfile		Aggfiles/catchdistribution.ldist.seine.area.agg
+ageaggfile		Aggfiles/catchdistribution.ldist.seine.age.agg
+lenaggfile		Aggfiles/catchdistribution.ldist.seine.len.agg
+fleetnames		seine
+stocknames		anch
+;
+[component]
+name		ecocadizrec.survey
+weight		0.625390869293308
+type		surveyindices
+datafile		Data/surveyindices.ecocadizrec.survey.lengths
+sitype		lengths
+biomass		1
+areaaggfile		Aggfiles/surveyindices.ecocadizrec.survey.area.agg
+lenaggfile		Aggfiles/surveyindices.ecocadizrec.survey.len.agg
+stocknames		anch
+fittype		fixedslopeloglinearfit
+slope		1
+;
+[component]
+name		ecocadiz.survey
+weight		0.206355757325629
+type		surveyindices
+datafile		Data/surveyindices.ecocadiz.survey.lengths
+sitype		lengths
+biomass		1
+areaaggfile		Aggfiles/surveyindices.ecocadiz.survey.area.agg
+lenaggfile		Aggfiles/surveyindices.ecocadiz.survey.len.agg
+stocknames		anch
+fittype		fixedslopeloglinearfit
+slope		1
+;
+[component]
+name		pelagonumber.survey
+weight		0.099502487562189
+type		surveyindices
+datafile		Data/surveyindices.pelagonumber.survey.lengths
+sitype		lengths
+biomass		1
+areaaggfile		Aggfiles/surveyindices.pelagonumber.survey.area.agg
+lenaggfile		Aggfiles/surveyindices.pelagonumber.survey.len.agg
+stocknames		anch
+fittype		fixedslopeloglinearfit
+slope		1
+;
+[component]
+name		sarnumber.survey
+weight		0.239980801535877
+type		surveyindices
+datafile		Data/surveyindices.sarnumber.survey.lengths
+sitype		lengths
+biomass		1
+areaaggfile		Aggfiles/surveyindices.sarnumber.survey.area.agg
+lenaggfile		Aggfiles/surveyindices.sarnumber.survey.len.agg
+stocknames		anch
+fittype		fixedslopeloglinearfit
+slope		1
+;
+[component]
+name		understocking
+weight		1e+08
+type		understocking
+;
+[component]
+name		bounds
+weight		0.5
+type		penalty
+datafile		Data/bounds.penaltyfile
+;

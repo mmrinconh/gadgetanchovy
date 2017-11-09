@@ -209,7 +209,7 @@ Summary_scenarios$ecosystem<-"South Western Waters, Gulf of Cádiz (ICES IXa Sou
 Summary_scenarios$species<-"EngraulisEncrasicolus"
 Summary_scenarios_fv<-Summary_scenarios%>%filter(year<2046)%>%select(ecosystem,model,species,year,B,catch,F,isFmsy,isFsq)
 head(Summary_scenarios_fv)   
-write_csv(Summary_scenarios_fv, path = "data_output/surveys_complete.csv")
+write.csv(Summary_scenarios_fv, file = "/home/marga/GADGET/Realgadgetgit/gadgetanchovy/Future_european_fisheries/Gulf_of_Cadiz.csv")
  
  
  

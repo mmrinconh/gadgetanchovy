@@ -205,7 +205,7 @@ prelisummary<-bind_rows(PROGN1%>%mutate(isFmsy=NA,isFsq=1),PROGN2%>%mutate(isFms
 
 Summary_scenarios<-prelisummary%>%mutate(B=B*0.001,catch=catch*0.001)#in tonnes
 Summary_scenarios$model<-"Gadget"
-Summary_scenarios$ecosystem<-"South Western Waters, Gulf of Cádiz (ICES IXa South)"
+Summary_scenarios$ecosystem<-"South Western Waters, Gulf of Cadiz (ICES IXa South)"
 Summary_scenarios$species<-"EngraulisEncrasicolus"
 Summary_scenarios_fv<-Summary_scenarios%>%filter(year<2046)%>%select(ecosystem,model,species,year,B,catch,F,isFmsy,isFsq)
 head(Summary_scenarios_fv)   

@@ -19,8 +19,8 @@ years = 1; params.file = "WGTS/params.final"; main.file = "main";
     num.trials = 1; fleets = pre.fleet; 
     biomass = FALSE; effort = pre.fleet$ratio; spawnmodel = "none"; spawnvar = NULL; 
     selectedstocks = NULL; biomasslevel = NULL; check.previous = FALSE; 
-    save.results = TRUE; stochastic = FALSE; rec.window = c(2011:2016); 
-    compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "PRE_FV") 
+    save.results = TRUE; stochastic = FALSE; rec.window = c(2011:2017); 
+    compact = TRUE; mat.par = c(0, 0); gd = list(dir = ".", rel.dir = "PRE_FVVV") 
 
     pre <- paste(gd$dir, gd$rel.dir, sep = "/")
     if (check.previous) {
@@ -84,6 +84,8 @@ years = 1; params.file = "WGTS/params.final"; main.file = "main";
     main$fleetfiles <- c(main$fleetfiles, sprintf("%s/fleet", 
         pre))
     Rgadget:::write.gadget.fleet(fleet, file = sprintf("%s/fleet", pre))
+    #stop
+    
     if (!is.null(rec.window)) {
         if (length(rec.window) == 1) {
             tmp <- subset(rec, year < rec.window)
@@ -94,7 +96,6 @@ years = 1; params.file = "WGTS/params.final"; main.file = "main";
     } else {
         tmp <- rec
     }
-    #stop
     if (stochastic) {
         fitAR <- lm(tmp$recruitment[-1] ~ head(tmp$recruitment, 
             -1))
@@ -115,6 +116,8 @@ years = 1; params.file = "WGTS/params.final"; main.file = "main";
         for (i in 1:years) {
             rec.forward[i + 1] <- coeffAR[2] * rec.forward[i] + 
                 x[i]
+           # rec.forward[i + 1] <- coeffAR[2] * rec.forward[i] + 
+              #x[i]
         }
         rec.out <- data.frame(year = sim.begin:(sim.begin + years), 
             recruitment = as.numeric(tail(rec.forward, years)))
@@ -289,30 +292,37 @@ years = 1; params.file = "WGTS/params.final"; main.file = "main";
         save(out, file = sprintf("%s/out.Rdata", pre))
     }
  #   return(out)
-#}
-   # load("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59/PRE_FV/out.Rdata")
+#} 
+    source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovybenchmark_allnumbers_59/WGTS.Rdata?raw=True")
+    fit<-out
+   load("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59/PRE_FVV/out.Rdata")
     
-    
+  
     
     
     hola<-plyr::ddply(out$catch %>% filter(year>1988), ~year + effort + trial, summarise, 
                       catch = sum(biomass.consumed)/1e+06)
-    
+ 
+    REC<-rbind(fit$res.by.year %>% select(year,recruitment) %>% filter(year>1988) %>% mutate(recruitment=recruitment/1e06), out$recruitment %>% mutate(recruitment=recruitment/1e06))
+    out$recruitment %>% mutate(recruitment=recruitment/1e06)
            
                                                                
     g<-arrangeGrob(#ggplot(fit$res.by.year,aes(year,total.number))+geom_line()+xlim(c(1988,2015)) ,
       #ylim(c(0,62)),
       ggplot(hola, aes(year, catch))+ geom_line() + theme_bw() + 
         ylab("Catch (in '000 tons)") + xlab("Year") +
-        geom_text(aes(label=ifelse(year>2016,as.character(signif(catch,2)),'')),hjust=0,vjust=0),
+        geom_text(aes(label=ifelse(year>2016,as.character(signif(catch,2)),'')),hjust=0,vjust=1,angle=0),
      ggplot(out$lw %>% filter(year>1988) , aes(year, total.bio/1e+06)) + geom_line() + theme_bw() + ylab("Biomass (in '000 tons)") + 
         xlab("Year") +
-       geom_text(aes(label=ifelse(year>2016,as.character(signif(total.bio/1e+06,2)),'')),hjust=0,vjust=0)
+       geom_text(aes(label=ifelse(year>2016,as.character(signif(total.bio/1e+06,2)),'')),hjust=0,vjust=1, angle=0),
+     ggplot(REC, aes(year, recruitment)) + 
+       geom_line() + theme_bw() + ylab("Recruitment (in millions)") + xlab("Year")+ 
+       geom_text(aes(label=ifelse(year>2016,as.character(signif(recruitment,2)),'')),hjust=1,vjust=1,angle=0)
     )
-    ggsave("Forecastplots.pdf",g, width = 5.2, height = 7.27, units = c("in", "cm", "mm"))
+    ggsave("Forecastplots.pdf",g, width = 5.2, height = 8.4, units = c("in", "cm", "mm"))
     setwd("~/Back up de MIPC/Documentos/TEXdocuments/Benchmark/Anchovy2017_benchmark_allnumbers_59")
-    ggsave("Forecastplots.pdf",g, width = 5.2, height = 6, units = c("in", "cm", "mm"))
-    ggsave("Forecastplots.jpg",g, width = 5.2, height = 6, units = c("in", "cm", "mm"))
+    ggsave("Forecastplots.pdf",g, width = 5.2, height = 8.4, units = c("in", "cm", "mm"))
+    ggsave("Forecastplots.jpg",g, width = 5.2, height = 8.4, units = c("in", "cm", "mm"))
     
     out$recruitment %>% mutate(recruitment=recruitment/1e06)
     

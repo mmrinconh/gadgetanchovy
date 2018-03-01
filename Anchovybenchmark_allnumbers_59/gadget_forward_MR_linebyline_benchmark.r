@@ -296,14 +296,87 @@ years = 1; params.file = "WGTS/params.final"; main.file = "main";
     source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovybenchmark_allnumbers_59/WGTS.Rdata?raw=True")
     fit<-out
    load("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59/PRE_FVV/out.Rdata")
+   
+   ##################################################################33
     
-  
+  #al final he cogido manualmente y he modificado el anch.rec (tres periodos de reclutamiento), el params. forward, el time en PRE_CUSTOM con el reclutamiento de 2017 fijo e igual a 
+   #2  2012  1582040890
+   # 3  2013  2088450903
+   # 4  2014  1830751816
+   # 5  2015  3498364363
+   # 6  2016  3870543437
+   # 7  2017  3870543437
+   # 8  2018  1822036821
+   # 
+   # > geoMean((RECno %>% filter(year>2011 & year<2017))$recruitment)
+   # [1] 2413579935
     
-    
+   gd = list(dir = ".", rel.dir = "PRE_CUSTOM") 
+   
+   pre <- paste(gd$dir, gd$rel.dir, sep = "/") 
+   callGadget(s = 1, i = sprintf("%s/params.forward", pre), 
+              main = sprintf("%s/main.pre", pre),log='tmp')
+   time <- new("gadget-time", firstyear = time$firstyear, firststep = time$firststep, 
+               lastyear = time$lastyear, laststep = time$laststep, notimesteps = time$notimesteps)
+   out <- list(lw = plyr::ldply(unique(fleet$prey$stock), function(x) {
+     numsteps <- nrow(subset(Rgadget:::getTimeSteps(time), step == 1))
+     tmp <- read.table(sprintf("%s/out/%s.lw", pre, x), comment.char = ";")
+     file.remove(sprintf("%s/out/%s.lw", pre, x))
+     names(tmp) <- c("year", "step", "area", "age", "length", 
+                     "number", "weight")
+     tmp$stock <- x
+     if (num.trials > 1) {
+       tmp2 <- length(unique(tmp$area)) * numsteps * length(unique(tmp$length))
+       tmp <- cbind(trial = as.factor(rep(1:num.trials, 
+                                          each = tmp2)), effort = as.factor(rep(effort, 
+                                                                                each = tmp2 * num.trials)), tmp)
+     } else {
+       tmp2 <- length(unique(tmp$area)) * numsteps * length(unique(tmp$length))
+       tmp$trial <- as.factor(1)
+       tmp$effort <- as.factor(rep(effort, each = tmp2))
+     }
+     tmp$length <- as.numeric(gsub("len", "", tmp$length))
+     if (compact) {
+       tmp <- plyr::ddply(tmp, ~year + step + trial + effort + 
+                            stock, summarise, total.bio = sum(number * weight), 
+                          ssb = sum(Rgadget:::logit(mat.par[1], mat.par[2], length) * 
+                                      number * weight))
+     }
+     return(tmp)
+   }), catch = plyr::ldply(unique(fleet$prey$stock), function(x) {
+     numsteps <- nrow(Rgadget:::getTimeSteps(time))
+     tmp <- read.table(sprintf("%s/out/catch.%s.lw", pre, 
+                               x), comment.char = ";")
+     file.remove(sprintf("%s/out/catch.%s.lw", pre, x))
+     names(tmp) <- c("year", "step", "area", "age", "length", 
+                     "number.consumed", "biomass.consumed", "mortality")
+     tmp$stock <- x
+     if (num.trials > 1) {
+       tmp2 <- length(unique(tmp$area)) * numsteps
+       tmp <- cbind(trial = as.factor(rep(1:num.trials, 
+                                          each = tmp2)), effort = as.factor(rep(effort, 
+                                                                                each = tmp2 * num.trials)), tmp)
+     } else {
+       tmp$trial <- as.factor(1)
+       tmp2 <- length(unique(tmp$area)) * numsteps
+       tmp$effort <- as.factor(rep(effort, each = tmp2))
+     }
+     return(tmp)
+   }), recruitment = rec.out, num.trials = num.trials, stochastic = stochastic, 
+   sim.begin = sim.begin)
+   class(out) <- c("gadget.forward", class(out))
+   if (save.results) {
+     save(out, file = sprintf("%s/out.Rdata", pre))
+   }
+   
+   
+   
+   
     hola<-plyr::ddply(out$catch %>% filter(year>1988), ~year + effort + trial, summarise, 
                       catch = sum(biomass.consumed)/1e+06)
  
     REC<-rbind(fit$res.by.year %>% select(year,recruitment) %>% filter(year>1988) %>% mutate(recruitment=recruitment/1e06), out$recruitment %>% mutate(recruitment=recruitment/1e06))
+    RECno<-rbind(fit$res.by.year %>% select(year,recruitment) %>% filter(year>1988) %>% mutate(recruitment=recruitment), out$recruitment %>% mutate(recruitment=recruitment))
     out$recruitment %>% mutate(recruitment=recruitment/1e06)
            
                                                                

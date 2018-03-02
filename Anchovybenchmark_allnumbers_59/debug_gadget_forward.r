@@ -340,7 +340,7 @@ g<-arrangeGrob(#ggplot(fit$res.by.year,aes(year,total.number))+geom_line()+xlim(
     geom_text(aes(label=ifelse(year>2016,as.character(signif(bio/1e+06,2)),'')),hjust=0,vjust=1, angle=0),
   ggplot(REC, aes(year, recruitment)) + 
     geom_line() + theme_bw() + ylab("Recruitment (in millions)") + xlab("Year")+ 
-    geom_text(aes(label=ifelse(year>2016,as.character(signif(recruitment,2)),'')),hjust=1,vjust=1,angle=0)
+    geom_text(aes(label=ifelse(year>2016,as.character(signif(recruitment,4)),'')),hjust=1,vjust=1,angle=0)
 )
 ggsave("Forecastplots2.pdf",g, width = 5.2, height = 8.4, units = c("in", "cm", "mm"))
 setwd("~/Back up de MIPC/Documentos/TEXdocuments/Benchmark/Anchovy2017_benchmark_allnumbers_59")

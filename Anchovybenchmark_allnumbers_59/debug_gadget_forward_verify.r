@@ -25,20 +25,20 @@ pre.fleet[,c(4,5)]#data.frame(fleet='seine',ratio = 1.407891)
 #     dplyr::summarise(recruitmentpre = sum(recruitment))%>% dplyr::summarise(recruitment = geoMean(recruitmentpre))  %>% dplyr::mutate(stock="anch", year="2017",trial=1,step=2)%>% dplyr::select(stock,year,trial,recruitment,step)
 # }
 
-#setwd("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59")
+setwd("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59")
 
 
 
 years = 1;params.file = "WGTS/params.final";
 main.file = 'main'; num.trials = 1;
 fleets = pre.fleet[,c(4,5)];
-effort = pre.fleet$ratio;
+effort = c(0.75,0.7811,0.8);
 rec.scalar = NULL;
 check.previous = FALSE;
 save.results = TRUE;
 stochastic = FALSE;
 rec.window = c(2012:2017);
-gd=list(dir='.',rel.dir='PRE_final');
+gd=list(dir='.',rel.dir='PRE_final_ver');
 method = 'custom';
 ref.years=c(1989:2016);
 custom.print=NULL;
@@ -47,7 +47,7 @@ custom.print=NULL;
   ## helper function
 readoutput <- function(x) {
   tmp <- readLines(x)
-  file.remove(x)
+  #file.remove(x)
   preamble <- tmp[grepl(";", tmp)]
   body <- tmp[!grepl(";", tmp)]
   header <- preamble[grepl("year-step-area", preamble)] %>% 
@@ -294,10 +294,10 @@ Rgadget:::write.gadget.main(main, file = sprintf("%s/main.pre", pre))
 
 #in cesga
 #change manually fleet.pre file
-#gd=list(dir='.',rel.dir='PRE_final')
-#pre <- paste(gd$dir, gd$rel.dir, sep = "/")
-callGadget(s = 1, i = sprintf("%s/params.forward", pre), 
-           main = sprintf("%s/main.pre", pre))
+# gd=list(dir='.',rel.dir='PRE_final_ver')
+# pre <- paste(gd$dir, gd$rel.dir, sep = "/")
+# callGadget(s = 1, i = sprintf("%s/params.forward", pre),
+#            main = sprintf("%s/main.pre", pre))
 time <- new("gadget-time", firstyear = time$firstyear, firststep = time$firststep, 
             lastyear = time$lastyear, laststep = time$laststep, notimesteps = time$notimesteps)
 out <- list.files(paste(pre, "out", sep = "/")) %>% purrr::set_names(paste(paste(pre, 
@@ -315,12 +315,12 @@ out <- list(custom = out, catch = catch, lw = lw, recruitment = prj.rec %>%
             sim.begin = sim.begin)
 class(out) <- c("gadget.forward", class(out))
 if (save.results) {
-  save(out, file = sprintf("%s/out.Rdata", pre))
+  save(out, file = sprintf("%s/out_ver2.Rdata", pre))
 }
 
 source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovybenchmark_allnumbers_59/WGTS.Rdata?raw=True")
 fit<-out
-load("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59/PRE_final/out.Rdata")
+load("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59/PRE_final_ver/out_ver2.Rdata")
 hola<-plyr::ddply(out$catch %>% filter(year>1988), ~year + effort + trial, summarise, 
                   catch = sum(biomass_consumed)/1e+06)
 
@@ -330,6 +330,7 @@ REC<-rbind(fit$res.by.year %>% select(year,recruitment) %>% filter(year>1988) %>
 
 gadfor<-out
 gadfor$lw <-gadfor$lw %>% mutate(biomass=number*mean_weight) %>% filter(year>1988)
+plyr::ddply(gadfor$lw, ~year+effort, summarise, bio = sum(biomass)/1e+06) %>% filter(year>2015) %>% mutate(F=-log(1-effort))
 
 g<-arrangeGrob(#ggplot(fit$res.by.year,aes(year,total.number))+geom_line()+xlim(c(1988,2015)) ,
   #ylim(c(0,62)),

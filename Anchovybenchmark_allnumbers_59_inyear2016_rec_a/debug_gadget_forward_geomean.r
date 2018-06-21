@@ -1,16 +1,21 @@
-#debug in CESGA
+#debug in CESGA!!!
+
 rm(list = ls())
+#devtools::install_github('hafro/rgadget')
 library(Rgadget)
 library(repmis)
-source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovybenchmark_allnumbers_59/WGTS.Rdata?raw=True")
+source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovybenchmark_allnumbers_59_inyear2016_rec_a/WGTS.Rdata?raw=True")
 #load("WGTS/WGTS.Rdata")
 fit<-out
 #filter(fit$fleet.info,year>=2015)
 pre.fleet <- filter(fit$fleet.info,year==2016) %>% 
   select(fleet, ratio = harv.rate) %>% filter(fleet=="seine")
 pre.fleet[,c(4,5)]#data.frame(fleet='seine',ratio = 1.407891)
+#pre.fleet$area<-as.factor(1)
 #load("Output.Rdata")
 #source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovybenchmark_allnumbers_59/Output.Rdata?raw=True")
+
+#F=-log(1-pre.fleet[1,5])
 
 #require(EnvStats)
 # rec <- 
@@ -25,29 +30,43 @@ pre.fleet[,c(4,5)]#data.frame(fleet='seine',ratio = 1.407891)
 #     dplyr::summarise(recruitmentpre = sum(recruitment))%>% dplyr::summarise(recruitment = geoMean(recruitmentpre))  %>% dplyr::mutate(stock="anch", year="2017",trial=1,step=2)%>% dplyr::select(stock,year,trial,recruitment,step)
 # }
 
-#setwd("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59")
+setwd("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59_inyear2016_rec_a")
 
+#code with AR1
+pre.fleet[,5]<-0.78 #equal to the 2016 no in year
+# gadget.forward(years = 1,params.file = "WGTS/params.final",
+#                main.file = 'main', num.trials = 1,
+#                fleets = pre.fleet[,c(4,5)],
+#                effort = seq(0.1,1.5,0.05),
+#                rec.scalar = NULL,
+#                check.previous = FALSE,
+#                save.results = TRUE,
+#                stochastic = FALSE,
+#                rec.window = c(2011:2016),
+#                gd=list(dir='.',rel.dir='PRE_final_opt_geomean'),
+#                #method = 'custom',
+#                ref.years=c(1989:2015),
+#                custom.print="printfile3")
 
-
-years = 1;params.file = "WGTS/params.final";
+years = 2;params.file = "WGTS/params.final";
 main.file = 'main'; num.trials = 1;
 fleets = pre.fleet[,c(4,5)];
-effort = pre.fleet$ratio;
+effort = seq(0.1,1.5,0.05);
 rec.scalar = NULL;
 check.previous = FALSE;
 save.results = TRUE;
 stochastic = FALSE;
-rec.window = c(2012:2017);
-gd=list(dir='.',rel.dir='PRE_final');
-method = 'custom';
-ref.years=c(1989:2016);
-custom.print=NULL;
+rec.window = c(2011:2016);
+gd=list(dir='.',rel.dir='PRE_final_opt__geomean_2017_2018');
+#method = 'custom';
+ref.years=c(1989:2015);
+#custom.print="printfile3"
 #prj.func = Proj.rec;
 #recu=rec
   ## helper function
 readoutput <- function(x) {
   tmp <- readLines(x)
-  file.remove(x)
+  #file.remove(x)
   preamble <- tmp[grepl(";", tmp)]
   body <- tmp[!grepl(";", tmp)]
   header <- preamble[grepl("year-step-area", preamble)] %>% 
@@ -98,11 +117,13 @@ Rgadget:::write.gadget.area(area, file = sprintf("%s/area", pre))
 fleet <- plyr::llply(fleet, function(x) {
   tmp <- subset(x, fleet %in% fleets$fleet)
 })
+#stop
 fleet$fleet <- dplyr::mutate(fleet$fleet, fleet = sprintf("%s.pre", 
                                                           fleet), multiplicative = "#rgadget.effort", amount = sprintf("%s/fleet.pre", 
                                                                                                                        pre), type = "linearfleet")
 fleet$prey <- dplyr::mutate(fleet$prey, fleet = sprintf("%s.pre", 
                                                         fleet))
+#stop
 fleet.predict <- time.grid %>% dplyr::filter((year >= sim.begin | 
                                                 (year == (sim.begin - 1) & step > time$laststep)) & area %in% 
                                                fleet$fleet$livesonareas)
@@ -112,6 +133,7 @@ if ("year" %in% names(fleets) | "step" %in% names(fleets)) {
   fleet.predict <- fleets %>% split(.$fleet) %>% purrr::map(~cbind(fleet.predict, 
                                                                    .)) %>% dplyr::bind_rows()
 }
+
 fleet.predict <- fleet.predict %>% dplyr::mutate(fleet = paste(fleet, 
                                                                "pre", sep = "."))
 Rgadget:::write.gadget.table(dplyr::arrange(fleet.predict[c("year", 
@@ -136,7 +158,7 @@ if (!is.null(rec.window)) {
 } else {
   tmp <- rec %>% dplyr::ungroup()
 }
-
+#stop
 if (stochastic) {
   if (tolower(method) == "bootstrap") {
     prj.rec <- tmp %>% dplyr::group_by(stock, year) %>% 
@@ -178,16 +200,13 @@ if (stochastic) {
       if (!(c("stock", "year", "trial", "recruitment", 
               "step") %in% names(prj.rec))) 
         stop("prj.func does include columns stock, year, step, trial and recruitment")
-    }
-    else {
+    } else {
       stop("No projection function supplied")
     }
-  }
-  else {
+  } else {
     stop("Invalid projection method")
   }
-}
-else {
+} else {
   require(EnvStats)
   prj.rec <-
     tmp %>%
@@ -293,11 +312,13 @@ main$stockfiles <- paste(sprintf("%s/%s", pre, plyr::laply(stocks,
 Rgadget:::write.gadget.main(main, file = sprintf("%s/main.pre", pre))
 
 #in cesga
-#change manually fleet.pre file
-#gd=list(dir='.',rel.dir='PRE_final')
-#pre <- paste(gd$dir, gd$rel.dir, sep = "/")
-callGadget(s = 1, i = sprintf("%s/params.forward", pre), 
-           main = sprintf("%s/main.pre", pre))
+#change manually print  file
+gd=list(dir='.',rel.dir='PRE_final_opt__geomean_2017_2018')
+pre <- paste(gd$dir, gd$rel.dir, sep = "/")
+callGadget(s = 1, i = sprintf("%s/params.forward", pre),
+           main = sprintf("%s/main.pre", pre),log='tmp')
+
+#here
 time <- new("gadget-time", firstyear = time$firstyear, firststep = time$firststep, 
             lastyear = time$lastyear, laststep = time$laststep, notimesteps = time$notimesteps)
 out <- list.files(paste(pre, "out", sep = "/")) %>% purrr::set_names(paste(paste(pre, 
@@ -315,13 +336,13 @@ out <- list(custom = out, catch = catch, lw = lw, recruitment = prj.rec %>%
             sim.begin = sim.begin)
 class(out) <- c("gadget.forward", class(out))
 if (save.results) {
-  save(out, file = sprintf("%s/out.Rdata", pre))
+  save(out, file = sprintf("%s/out_geomean2017_2018.Rdata", pre))
 }
 
-source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovybenchmark_allnumbers_59/WGTS.Rdata?raw=True")
-fit<-out
-load("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59/PRE_final/out.Rdata")
-hola<-plyr::ddply(out$catch %>% filter(year>1988), ~year + effort + trial, summarise, 
+#source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovybenchmark_allnumbers_59/WGTS.Rdata?raw=True")
+#fit<-out
+load("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59_inyear2016_rec_a/PRE_final_opt__geomean_2017_2018/out_geomean2017_2018.Rdata")
+hola<-plyr::ddply(out$catch %>% filter(year>1988), ~year + step+effort + trial, summarise, 
                   catch = sum(biomass_consumed)/1e+06)
 
 REC<-rbind(fit$res.by.year %>% select(year,recruitment) %>% filter(year>1988) %>% mutate(recruitment=recruitment/1e06), out$recruitment %>% select(year,recruitment) %>% mutate(recruitment=recruitment/1e06))
@@ -330,6 +351,71 @@ REC<-rbind(fit$res.by.year %>% select(year,recruitment) %>% filter(year>1988) %>
 
 gadfor<-out
 gadfor$lw <-gadfor$lw %>% mutate(biomass=number*mean_weight) %>% filter(year>1988)
+Bio_prog<-plyr::ddply(gadfor$lw, ~year+effort+trial, summarise, bio = sum(biomass)/1e+06) %>% filter(year>2015) %>% group_by(effort) %>% filter (! duplicated(bio)) %>% mutate(F=-log(1-effort))
+
+
+Catch_prog<-hola %>% filter(year>2015)  %>% group_by(effort) %>% filter (! duplicated(catch)) %>% mutate(F=-log(1-effort))
+Bio_catch_prog<-inner_join(Bio_prog,Catch_prog)
+
+
+SSBforwardpre<-out$custom$anch.std %>% mutate(biomass=number*mean_weight) %>% filter(year>2015) %>% group_by(year,age,biomass,effort)%>%summarize() 
+View(SSBforwardpre)
+library(gdata)
+library(XLConnect)     
+setwd("~/Back up de MIPC/Documentos/TEXdocuments/Benchmark/Anchovy2017_benchmark_allnumbers_59_inyear2016_rec_a")
+
+matageyear<-readWorksheetFromFile("/home/marga/GADGET/DATOS/Maturityojives_9aS_Fernando.xls", sheet = "Hoja1", 
+                                  header = TRUE, startCol = 3, 
+                                  startRow = 7, endCol = 7, 
+                                  endRow = 36, useCachedValues=TRUE)
+names(matageyear)<-c('year','0','1','2','3')
+
+library(reshape)
+matageyeardf<-melt(matageyear,id=c("year"))
+names(matageyeardf)<-c("year","age","propmat")
+mat2015<-matageyeardf %>% filter(year==2015) %>% select(age,propmat) 
+mat2015$age<-as.integer(mat2015$age)
+Bioprop<-inner_join(SSBforwardpre,mat2015)%>%mutate(SSB=biomass*propmat) %>% group_by(year,effort)%>% summarise(SSBtotal=sum(SSB)) %>% filter(year==2017)
+
+Bioprop<-SSBforwardpre,matageyeardf,by=c("year","age"))
+
+
+
+
+setwd("~/Back up de MIPC/Documentos/TEXdocuments/Benchmark/Anchovy2017_benchmark_allnumbers_59_inyear2016_rec_a")
+
+
+
+write.xlsx(as.data.frame(Bio_catch_prog),file="prog_biocatch_2017_2018.xlsx")
+
+
+
+
+
+
+View(Bio_prog)
+AR1FPA<-left_join(gadfor$catch %>%
+            group_by(year,step,trial,effort) %>%
+            summarise(catch=sum(biomass_consumed)),
+          gadfor$lw) %>% filter(year>1988) %>% ungroup() %>%
+  group_by(year,step,effort,trial) %>%
+  summarise(catch=mean(catch),
+            total.bio = mean(number*mean_weight/1e3)) 
+
+View(AR1FPA)
+%>% ungroup() %>% 
+  group_by(effort) %>%
+  summarise(catch.m=mean(catch),
+            catch.u=quantile(catch,0.975),
+            catch.l=quantile(catch,0.025),
+            bio.m=mean(total.bio),
+            bio.u=quantile(total.bio,0.975),
+            bio.l=quantile(total.bio,0.025))%>%mutate(F=-log(1-effort))
+
+
+View(AR1FPA)
+
+
 
 g<-arrangeGrob(#ggplot(fit$res.by.year,aes(year,total.number))+geom_line()+xlim(c(1988,2015)) ,
   #ylim(c(0,62)),
@@ -338,7 +424,7 @@ g<-arrangeGrob(#ggplot(fit$res.by.year,aes(year,total.number))+geom_line()+xlim(
     geom_text(aes(label=ifelse(year>2016,as.character(signif(catch,2)),'')),hjust=0,vjust=1,angle=0),
   ggplot(plyr::ddply(gadfor$lw, ~year, summarise, bio = sum(biomass)/1e+06) , aes(year, bio)) + geom_line() + theme_bw() + ylab("Biomass (in '000 tons)") + 
     xlab("Year") +
-    geom_text(aes(label=ifelse(year>2016,as.character(signif(bio,2)),'')),hjust=0,vjust=1, angle=0),
+    geom_text(aes(label=ifelse(year>2016,as.character(signif(bio/1e+06,2)),'')),hjust=0,vjust=1, angle=0),
   ggplot(REC, aes(year, recruitment)) + 
     geom_line() + theme_bw() + ylab("Recruitment (in millions)") + xlab("Year")+ 
     geom_text(aes(label=ifelse(year>2016,as.character(signif(recruitment,4)),'')),hjust=1,vjust=1,angle=0)
@@ -349,5 +435,105 @@ ggsave("Forecastplots2.pdf",g, width = 5.2, height = 8.4, units = c("in", "cm", 
 ggsave("Forecastplots2.jpg",g, width = 5.2, height = 8.4, units = c("in", "cm", "mm"))
 
 
+##################3
+#Hago gadget.forward en el cesga
+library(Rgadget)
+library(repmis)
+#source_data("https://github.com/mmrinconh/gadgetanchovy/blob/master/Anchovybenchmark_allnumbers_59_inyear2016_rec_a/WGTS.Rdata?raw=True")
+load("WGTS/WGTS.Rdata")
+fit<-out
+#filter(fit$fleet.info,year>=2015)
+pre.fleet <- filter(fit$fleet.info,year==2013) %>% 
+  select(fleet, ratio = harv.rate) %>% filter(fleet=="seine")
+pre.fleet[,c(4,5)]#
 
 
+
+gadget.forward(years = 2,params.file = "WGTS/params.final",
+                                   main.file = 'main', num.trials = 5,
+                                   fleets = pre.fleet[,c(4,5)],
+                                   effort = seq(0.1,1.5,0.05),
+                                   rec.scalar = NULL,
+                                   check.previous = FALSE,
+                                   save.results = TRUE,
+                                   stochastic = TRUE,
+                                   rec.window = c(2011:2016),
+                                   gd=list(dir='.',rel.dir='PRE_final_opt_4'),
+                                   #method = 'custom',
+                                   ref.years=c(1989:2015),
+                                   custom.print=NULL)
+#modifico printfile dentro de pre (all 3 en vez de all 1) y
+# corro gadget de nuevo para que no desaparezcan los outputs en el cesga
+gd=list(dir='.',rel.dir='PRE_final_opt_4')
+pre <- paste(gd$dir, gd$rel.dir, sep = "/")
+callGadget(s = 1, i = sprintf("%s/params.forward", pre), 
+           main = sprintf("%s/main.pre", pre))
+
+#a partir de aquí se corre localmente=aquí en mi pc
+ #tmp <- readLines("anch.lw")
+
+readoutput <- function(x) {
+  tmp <- readLines(x)
+  #file.remove(x)
+  preamble <- tmp[grepl(";", tmp)]
+  body <- tmp[!grepl(";", tmp)]
+  header <- preamble[grepl("year-step-area", preamble)] %>% 
+    gsub("; (*)", "\\1", .) %>% stringr::str_split("-") %>% 
+    unlist() %>% gsub(" ", "_", .)
+  body %>% paste(collapse = "\n") %>% read.table(text = ., 
+                                                 col.names = header, fill = TRUE, stringsAsFactors = FALSE) %>% 
+    dplyr::mutate(trial = cut(1:length(year), c(0, which(diff(year) < 
+                                                           0), 1e+09), labels = FALSE) - 1) %>% tibble::as_tibble()
+}
+setwd("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59_inyear2016_rec_a")  
+ A<- readoutput("PRE_final_opt_4/out/anch.lw")
+B<-readoutput("PRE_final_opt_4/out/catch.anch.lw")
+gd=list(dir='.',rel.dir='PRE_final_opt_4')
+pre <- paste(gd$dir, gd$rel.dir, sep = "/")
+out <- list.files(paste(pre, "out", sep = "/")) %>% purrr::set_names(paste(paste(pre, 
+                                                                                 "out", sep = "/"), ., sep = "/"), .) %>% purrr::map(readoutput) %>% 
+  purrr::map(~.x %>% dplyr::left_join(dplyr::data_frame(trial = 0:(num.trials * 
+                                                                     length(effort) - 1), effort = rep(effort, num.trials)), 
+                                      by = "trial"))
+catch <- out[catch.files] %>% bind_rows(.id = "stock") %>% 
+  mutate(stock = gsub("catch.(.+).lw", "\\1", stock))
+lw <- out[print.files] %>% bind_rows(.id = "stock") %>% mutate(stock = gsub("(^.+).lw", 
+                                                                            "\\1", stock))
+out <- out[!(names(out) %in% c(catch.files, print.files))]
+out <- list(custom = out, catch = catch, lw = lw, recruitment = prj.rec %>% 
+              tibble::as_tibble(), num.trials = num.trials, stochastic = stochastic, 
+            sim.begin = sim.begin)
+class(out) <- c("gadget.forward", class(out))
+  save(out, file = sprintf("%s/out1.Rdata", pre))
+  
+  load("/run/user/1000/gvfs/sftp:host=ft2.cesga.es,user=csmdpmrh/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/Anchovy2018_benchmark_allnumbers_59_inyear2016_rec_a/PRE_final_opt_4/out1.Rdata")
+  
+  
+  gadfor<-out
+  gadfor$lw <-gadfor$lw %>% mutate(biomass=number*mean_weight) %>% filter(year>1988)
+ #gadfor$catch<- gadfor$catch %>% mutate(year2=ifelse(step==1 | step == 2,year-1,year))
+  
+  #2015 1 es realmente 2014
+  AR1FPA<-left_join(gadfor$catch %>%
+                      group_by(year,step,trial,effort) %>%
+                      summarise(catch=sum(biomass_consumed)),
+                    gadfor$lw) %>% filter(year>2015) %>% ungroup() %>%
+    group_by(year,step,effort,trial) %>% 
+    summarise(catch=mean(catch),
+              total.bio = mean(number*mean_weight))    %>% ungroup() %>% 
+    group_by(year,effort) %>%
+    summarise(catch.m=mean(catch),
+              catch.u=quantile(catch,0.975),
+              catch.l=quantile(catch,0.025),
+              bio.m=mean(total.bio,na.rm=T),
+              bio.u=quantile(total.bio,0.975,na.rm=T),
+              bio.l=quantile(total.bio,0.025,na.rm=T))%>%mutate(F=-log(1-effort))
+  View(AR1FPA)
+  
+  
+  
+  
+  
+   A<- readoutput("PRE_final_opt_geomean/out/anch.lw")
+  B<-readoutput("PRE_final_opt_4/out/catch.anch.lw")
+  gd=list(dir='.',rel.dir='PRE_final_opt_4')

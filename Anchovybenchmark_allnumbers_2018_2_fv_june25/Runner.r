@@ -45,16 +45,16 @@ save(params,rec,st,lik.data,SS,file="Output.Rdata")
 
 #setwd("..")
 #fit1 <- gadget.fit(wgts = 'WGTS1', 
-                   f.age.range=F1)
+               #    f.age.range=F1)
 
 #fit2 <- gadget.fit(wgts = 'WGTS2', 
                   # f.age.range=F2)
 #F12<-data.frame(stock="anch",age.min=1,age.max=2)
 #fit12 <- gadget.fit(wgts = 'WGTS12', 
-                    f.age.range=F12)
+                   # f.age.range=F12)
 
 
 
 
 
-retro<-gadget.retro(mainfile = 'WGTS/main.final', iterative=TRUE)
+#retro<-gadget.retro(mainfile = 'WGTS/main.final', iterative=TRUE)

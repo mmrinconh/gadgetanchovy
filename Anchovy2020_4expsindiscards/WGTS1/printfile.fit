@@ -1,0 +1,97 @@
+; gadget printfile, created in 2020-05-26
+[component]
+type	likelihoodsummaryprinter
+printfile	WGTS1/out.fit/likelihoodsummary
+;
+[component]
+type	likelihoodprinter
+likelihood	aldist.ecocadiz
+printfile	WGTS1/out.fit/aldist.ecocadiz
+;
+[component]
+type	likelihoodprinter
+likelihood	aldist.pelago
+printfile	WGTS1/out.fit/aldist.pelago
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.alkseine
+printfile	WGTS1/out.fit/ldist.alkseine
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.ecocadiz.noage
+printfile	WGTS1/out.fit/ldist.ecocadiz.noage
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.pelago.noage
+printfile	WGTS1/out.fit/ldist.pelago.noage
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.seine
+printfile	WGTS1/out.fit/ldist.seine
+;
+[component]
+type	likelihoodprinter
+likelihood	ecocadiz.survey
+printfile	WGTS1/out.fit/ecocadiz.survey
+;
+[component]
+type	likelihoodprinter
+likelihood	pelagonumber.survey
+printfile	WGTS1/out.fit/pelagonumber.survey
+;
+[component]
+type	stockstdprinter
+stockname	anch
+printfile	WGTS1/out.fit/anch.std
+printatstart 0
+yearsandsteps	all	1
+[component]
+type	stockprinter
+stocknames	anch
+areaaggfile	WGTS1/print.aggfiles/anch.area.agg
+ageaggfile	WGTS1/print.aggfiles/anch.allages.agg
+lenaggfile	WGTS1/print.aggfiles/anch.len.agg
+printfile	WGTS1/out.fit/anch.full
+printatstart	0
+yearsandsteps	all	1
+[component]
+type	predatorpreyprinter
+predatornames	seine ECO PEL
+preynames	anch
+areaaggfile	WGTS1/print.aggfiles/anch.area.agg
+ageaggfile	WGTS1/print.aggfiles/anch.age.agg
+lenaggfile	WGTS1/print.aggfiles/anch.alllen.agg
+printfile	WGTS1/out.fit/anch.prey
+yearsandsteps	all all
+[component]
+type	predatorpreyprinter
+predatornames	seine
+preynames	anch
+areaaggfile	WGTS1/print.aggfiles/anch.area.agg
+ageaggfile	WGTS1/print.aggfiles/anch.allages.agg
+lenaggfile	WGTS1/print.aggfiles/anch.len.agg
+printfile	WGTS1/out.fit/anch.prey.seine
+yearsandsteps	all all
+[component]
+type	predatorpreyprinter
+predatornames	ECO
+preynames	anch
+areaaggfile	WGTS1/print.aggfiles/anch.area.agg
+ageaggfile	WGTS1/print.aggfiles/anch.allages.agg
+lenaggfile	WGTS1/print.aggfiles/anch.len.agg
+printfile	WGTS1/out.fit/anch.prey.ECO
+yearsandsteps	all all
+[component]
+type	predatorpreyprinter
+predatornames	PEL
+preynames	anch
+areaaggfile	WGTS1/print.aggfiles/anch.area.agg
+ageaggfile	WGTS1/print.aggfiles/anch.allages.agg
+lenaggfile	WGTS1/print.aggfiles/anch.len.agg
+printfile	WGTS1/out.fit/anch.prey.PEL
+yearsandsteps	all all
+;

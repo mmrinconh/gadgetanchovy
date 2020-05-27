@@ -1,0 +1,2302 @@
+Gadget version 2.2.00-BETA running on c0910 Tue May 26 18:12:04 2020
+Log file to record Gadget actions that take place during this run
+
+Starting Gadget from directory: /mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/assessment2020/Anchovy2020_4expsindiscards
+using data from directory: /mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/assessment2020/Anchovy2020_4expsindiscards
+
+Checking to see if file params.in can be opened ... OK
+Checking to see if file params.out can be opened ... OK
+Checking to see if file lik.out can be opened ... OK
+
+Checking to see if file main can be opened ... OK
+Opening file main
+Checking to see if file Modelfiles/time can be opened ... OK
+Opening file Modelfiles/time
+Read time file - number of timesteps 166
+Closing file Modelfiles/time
+Checking to see if file Modelfiles/area can be opened ... OK
+Opening file Modelfiles/area
+Warning in area - temperature data doesnt span time range
+Read temperature data - number of entries 130
+Read area file - number of areas 1
+Closing file Modelfiles/area
+Checking to see if file Modelfiles/anch can be opened ... OK
+Opening file Modelfiles/anch
+Checking to see if file Aggfiles/catchdistribution.ldist.seine.len.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.seine.len.agg
+Read length aggregation file - number of entries 38
+Closing file Aggfiles/catchdistribution.ldist.seine.len.agg
+Read basic stock data for stock anch
+Read growth data for stock anch
+Read natural mortality data for stock anch
+Checking to see if file Aggfiles/catchdistribution.ldist.seine.len.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.seine.len.agg
+Read length aggregation file - number of entries 38
+Closing file Aggfiles/catchdistribution.ldist.seine.len.agg
+Read prey data for stock anch
+Read predator data for stock anch
+Checking to see if file Initfiles/anch.init can be opened ... OK
+Opening file Initfiles/anch.init
+Read initial conditions data file - number of entries 4
+Closing file Initfiles/anch.init
+Checking to see if file Modelfiles/anch.refweights can be opened ... OK
+Opening file Modelfiles/anch.refweights
+Read reference weights OK - number of entries 35
+Closing file Modelfiles/anch.refweights
+Read initial conditions data for stock anch
+Read migration data for stock anch
+Read maturity data for stock anch
+Read transition data for stock anch
+Checking to see if file Initfiles/anch.rec can be opened ... OK
+Opening file Initfiles/anch.rec
+Read renewal data file - number of entries 104
+Closing file Initfiles/anch.rec
+Checking to see if file Modelfiles/anch.refweights can be opened ... OK
+Opening file Modelfiles/anch.refweights
+Read reference weights OK - number of entries 35
+Closing file Modelfiles/anch.refweights
+Read renewal data for stock anch
+Read spawning data for stock anch
+Read straying data for stock anch
+Read stock OK - created stock anch
+Closing file Modelfiles/anch
+Checking to see if file Modelfiles/fleet.fleet can be opened ... OK
+Opening file Modelfiles/fleet.fleet
+Opening file Initfiles/anchalpha.tvf
+Read timevariable data - number of timesteps 3
+Closing file Initfiles/anchalpha.tvf
+Opening file Initfiles/anchL50.tvf
+Read timevariable data - number of timesteps 3
+Closing file Initfiles/anchL50.tvf
+Read predation data - number of preys 1
+Checking to see if file Data/fleet.seine.data can be opened ... OK
+Opening file Data/fleet.seine.data
+Read amounts data file - number of entries 126
+Closing file Data/fleet.seine.data
+Read fleet OK - created fleet seine
+Read predation data - number of preys 1
+Checking to see if file Data/fleet.ECO.data can be opened ... OK
+Opening file Data/fleet.ECO.data
+Read amounts data file - number of entries 12
+Closing file Data/fleet.ECO.data
+Read fleet OK - created fleet ECO
+Read predation data - number of preys 1
+Checking to see if file Data/fleet.PEL.data can be opened ... OK
+Opening file Data/fleet.PEL.data
+Read amounts data file - number of entries 18
+Closing file Data/fleet.PEL.data
+Read fleet OK - created fleet PEL
+Closing file Modelfiles/fleet.fleet
+Checking to see if file likelihood can be opened ... OK
+Opening file likelihood
+Checking to see if file Data/bounds.penaltyfile can be opened ... OK
+Opening file Data/bounds.penaltyfile
+Read penalty file - number of entries 1
+Closing file Data/bounds.penaltyfile
+Read likelihood OK - created likelihood component bounds
+Read likelihood OK - created likelihood component understocking
+Checking to see if file Aggfiles/catchdistribution.ldist.seine.area.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.seine.area.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/catchdistribution.ldist.seine.area.agg
+Checking to see if file Aggfiles/catchdistribution.ldist.seine.age.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.seine.age.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/catchdistribution.ldist.seine.age.agg
+Checking to see if file Aggfiles/catchdistribution.ldist.seine.len.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.seine.len.agg
+Read length aggregation file - number of entries 38
+Closing file Aggfiles/catchdistribution.ldist.seine.len.agg
+Read fleet data - number of fleets 1
+Read stock data - number of stocks 1
+Checking to see if file Data/catchdistribution.ldist.seine.sumofsquares can be opened ... OK
+Opening file Data/catchdistribution.ldist.seine.sumofsquares
+Read catchdistribution data file - number of entries 4664
+Closing file Data/catchdistribution.ldist.seine.sumofsquares
+Read likelihood OK - created likelihood component ldist.seine
+Checking to see if file Aggfiles/catchdistribution.ldist.pelago.noage.area.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.pelago.noage.area.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/catchdistribution.ldist.pelago.noage.area.agg
+Checking to see if file Aggfiles/catchdistribution.ldist.pelago.noage.age.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.pelago.noage.age.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/catchdistribution.ldist.pelago.noage.age.agg
+Checking to see if file Aggfiles/catchdistribution.ldist.pelago.noage.len.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.pelago.noage.len.agg
+Read length aggregation file - number of entries 38
+Closing file Aggfiles/catchdistribution.ldist.pelago.noage.len.agg
+Read fleet data - number of fleets 1
+Read stock data - number of stocks 1
+Checking to see if file Data/catchdistribution.ldist.pelago.noage.sumofsquares can be opened ... OK
+Opening file Data/catchdistribution.ldist.pelago.noage.sumofsquares
+Read catchdistribution data file - number of entries 551
+Closing file Data/catchdistribution.ldist.pelago.noage.sumofsquares
+Read likelihood OK - created likelihood component ldist.pelago.noage
+Checking to see if file Aggfiles/catchdistribution.ldist.ecocadiz.noage.area.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.ecocadiz.noage.area.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/catchdistribution.ldist.ecocadiz.noage.area.agg
+Checking to see if file Aggfiles/catchdistribution.ldist.ecocadiz.noage.age.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.ecocadiz.noage.age.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/catchdistribution.ldist.ecocadiz.noage.age.agg
+Checking to see if file Aggfiles/catchdistribution.ldist.ecocadiz.noage.len.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.ecocadiz.noage.len.agg
+Read length aggregation file - number of entries 38
+Closing file Aggfiles/catchdistribution.ldist.ecocadiz.noage.len.agg
+Read fleet data - number of fleets 1
+Read stock data - number of stocks 1
+Checking to see if file Data/catchdistribution.ldist.ecocadiz.noage.sumofsquares can be opened ... OK
+Opening file Data/catchdistribution.ldist.ecocadiz.noage.sumofsquares
+Read catchdistribution data file - number of entries 384
+Closing file Data/catchdistribution.ldist.ecocadiz.noage.sumofsquares
+Read likelihood OK - created likelihood component ldist.ecocadiz.noage
+Checking to see if file Aggfiles/catchdistribution.ldist.alkseine.area.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.alkseine.area.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/catchdistribution.ldist.alkseine.area.agg
+Checking to see if file Aggfiles/catchdistribution.ldist.alkseine.age.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.alkseine.age.agg
+Read aggregation file - number of entries 4
+Closing file Aggfiles/catchdistribution.ldist.alkseine.age.agg
+Checking to see if file Aggfiles/catchdistribution.ldist.alkseine.len.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.ldist.alkseine.len.agg
+Read length aggregation file - number of entries 32
+Closing file Aggfiles/catchdistribution.ldist.alkseine.len.agg
+Read fleet data - number of fleets 1
+Read stock data - number of stocks 1
+Checking to see if file Data/catchdistribution.ldist.alkseine.sumofsquares can be opened ... OK
+Opening file Data/catchdistribution.ldist.alkseine.sumofsquares
+Read catchdistribution data file - number of entries 15872
+Closing file Data/catchdistribution.ldist.alkseine.sumofsquares
+Read likelihood OK - created likelihood component ldist.alkseine
+Checking to see if file Aggfiles/catchdistribution.aldist.pelago.area.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.aldist.pelago.area.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/catchdistribution.aldist.pelago.area.agg
+Checking to see if file Aggfiles/catchdistribution.aldist.pelago.age.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.aldist.pelago.age.agg
+Read aggregation file - number of entries 4
+Closing file Aggfiles/catchdistribution.aldist.pelago.age.agg
+Checking to see if file Aggfiles/catchdistribution.aldist.pelago.len.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.aldist.pelago.len.agg
+Read length aggregation file - number of entries 32
+Closing file Aggfiles/catchdistribution.aldist.pelago.len.agg
+Read fleet data - number of fleets 1
+Read stock data - number of stocks 1
+Checking to see if file Data/catchdistribution.aldist.pelago.sumofsquares can be opened ... OK
+Opening file Data/catchdistribution.aldist.pelago.sumofsquares
+Read catchdistribution data file - number of entries 592
+Closing file Data/catchdistribution.aldist.pelago.sumofsquares
+Read likelihood OK - created likelihood component aldist.pelago
+Checking to see if file Aggfiles/catchdistribution.aldist.ecocadiz.area.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.aldist.ecocadiz.area.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/catchdistribution.aldist.ecocadiz.area.agg
+Checking to see if file Aggfiles/catchdistribution.aldist.ecocadiz.age.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.aldist.ecocadiz.age.agg
+Read aggregation file - number of entries 3
+Closing file Aggfiles/catchdistribution.aldist.ecocadiz.age.agg
+Checking to see if file Aggfiles/catchdistribution.aldist.ecocadiz.len.agg can be opened ... OK
+Opening file Aggfiles/catchdistribution.aldist.ecocadiz.len.agg
+Read length aggregation file - number of entries 32
+Closing file Aggfiles/catchdistribution.aldist.ecocadiz.len.agg
+Read fleet data - number of fleets 1
+Read stock data - number of stocks 1
+Checking to see if file Data/catchdistribution.aldist.ecocadiz.sumofsquares can be opened ... OK
+Opening file Data/catchdistribution.aldist.ecocadiz.sumofsquares
+Read catchdistribution data file - number of entries 1152
+Closing file Data/catchdistribution.aldist.ecocadiz.sumofsquares
+Read likelihood OK - created likelihood component aldist.ecocadiz
+Checking to see if file Aggfiles/surveyindices.pelagonumber.survey.area.agg can be opened ... OK
+Opening file Aggfiles/surveyindices.pelagonumber.survey.area.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/surveyindices.pelagonumber.survey.area.agg
+Checking to see if file Aggfiles/surveyindices.pelagonumber.survey.len.agg can be opened ... OK
+Opening file Aggfiles/surveyindices.pelagonumber.survey.len.agg
+Read length aggregation file - number of entries 1
+Closing file Aggfiles/surveyindices.pelagonumber.survey.len.agg
+Read stock data - number of stocks 1
+Checking to see if file Data/surveyindices.pelagonumber.survey.lengths can be opened ... OK
+Opening file Data/surveyindices.pelagonumber.survey.lengths
+Warning in surveyindex - differing timesteps for pelagonumber.survey
+Read surveyindex data file - number of entries 18
+Closing file Data/surveyindices.pelagonumber.survey.lengths
+Read likelihood OK - created likelihood component pelagonumber.survey
+Checking to see if file Aggfiles/surveyindices.ecocadiz.survey.area.agg can be opened ... OK
+Opening file Aggfiles/surveyindices.ecocadiz.survey.area.agg
+Read aggregation file - number of entries 1
+Closing file Aggfiles/surveyindices.ecocadiz.survey.area.agg
+Checking to see if file Aggfiles/surveyindices.ecocadiz.survey.len.agg can be opened ... OK
+Opening file Aggfiles/surveyindices.ecocadiz.survey.len.agg
+Read length aggregation file - number of entries 1
+Closing file Aggfiles/surveyindices.ecocadiz.survey.len.agg
+Read stock data - number of stocks 1
+Checking to see if file Data/surveyindices.ecocadiz.survey.lengths can be opened ... OK
+Opening file Data/surveyindices.ecocadiz.survey.lengths
+Warning in surveyindex - differing timesteps for ecocadiz.survey
+Read surveyindex data file - number of entries 12
+Closing file Data/surveyindices.ecocadiz.survey.lengths
+Read likelihood OK - created likelihood component ecocadiz.survey
+Closing file likelihood
+Closing file main
+
+Finished reading model data files, starting to run simulation  1  threads
+
+Checking to see if file lik.out can be opened ... OK
+Opening file lik.out
+Checking to see if file params.in can be opened ... OK
+Opening file params.in
+Generating a random starting point 1.19368 constant
+Generating a random starting point 5.51244 l50
+Generating a random starting point 0.359185 constanteco
+Generating a random starting point 1.02467 constantpel
+Generating a random starting point 2.68579 constantecorec
+Generating a random starting point 1.30042 constantarsa
+Generating a random starting point 18.963 l50arsa
+Closing file params.in
+Warning in keeper - failed to match switch constant
+Warning in keeper - failed to match switch l50
+Warning in keeper - failed to match switch constantecorec
+Warning in keeper - failed to match switch l50ecorec
+Warning in keeper - failed to match switch constantarsa
+Warning in keeper - failed to match switch l50arsa
+
+Initialising stock anch
+Calculated initial condition data for stock anch
+Initialising predator seine
+Initialising predator ECO
+Initialising predator PEL
+Initialising likelihood component bounds
+Initialising likelihood component understocking
+Initialising likelihood component ldist.seine
+Initialising likelihood component ldist.pelago.noage
+Initialising likelihood component ldist.ecocadiz.noage
+Initialising likelihood component ldist.alkseine
+Initialising likelihood component aldist.pelago
+Initialising likelihood component aldist.ecocadiz
+Initialising likelihood component pelagonumber.survey
+Initialising likelihood component ecocadiz.survey
+
+Reset boundlikelihood component bounds
+Reset understocking component understocking
+Reset catchdistribution component ldist.seine
+Reset catchdistribution component ldist.pelago.noage
+Reset catchdistribution component ldist.ecocadiz.noage
+Reset catchdistribution component ldist.alkseine
+Reset catchdistribution component aldist.pelago
+Reset catchdistribution component aldist.ecocadiz
+Reset surveyindex component pelagonumber.survey
+Reset surveyindex component ecocadiz.survey
+For this model simulation, no parameters are outside the bounds
+Calculated likelihood score for boundlikelihood component to be 0
+
+Reset time in the simulation to timestep 1
+Reset natural mortality data for stock anch
+Reset consumption data for prey anch
+Calculated initial condition data for stock anch
+Reset renewal data for stock anch
+Reset grower data for stock anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Warning in growth calculation - length greater than length infinity
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 2
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 3
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 4
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 5
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 6
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 7
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 8
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 9
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 10
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 11
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 12
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 13
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 14
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 15
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 16
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 17
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 18
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 19
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 20
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 21
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 22
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 23
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 24
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 25
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 26
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 27
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 28
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 29
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 30
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 31
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 32
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 33
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 34
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 35
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 36
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+
+Increased time in the simulation to timestep 37
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+Warning in catchdistribution - zero catch found
+The likelihood score for this component on this timestep is 0.134927
+
+Increased time in the simulation to timestep 38
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+Warning in catchdistribution - zero catch found
+The likelihood score for this component on this timestep is 0.114196
+
+Increased time in the simulation to timestep 39
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+Warning in catchdistribution - zero catch found
+The likelihood score for this component on this timestep is 0.12326
+
+Increased time in the simulation to timestep 40
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+Warning in catchdistribution - zero catch found
+The likelihood score for this component on this timestep is 0.123833
+
+Increased time in the simulation to timestep 41
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.223634
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.062024
+
+Increased time in the simulation to timestep 42
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.203667
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.022231
+
+Increased time in the simulation to timestep 43
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.21898
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0814808
+
+Increased time in the simulation to timestep 44
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.293618
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0844201
+
+Increased time in the simulation to timestep 45
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.201834
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0121911
+
+Increased time in the simulation to timestep 46
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.229625
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0153741
+
+Increased time in the simulation to timestep 47
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.237413
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0271318
+
+Increased time in the simulation to timestep 48
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.110372
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0395434
+
+Increased time in the simulation to timestep 49
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.228696
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0289479
+
+Increased time in the simulation to timestep 50
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+The likelihood score for this component on this timestep is 1.37909e+11
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.228729
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0549078
+
+Increased time in the simulation to timestep 51
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.252511
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.172758
+
+Increased time in the simulation to timestep 52
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0962642
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0878998
+
+Increased time in the simulation to timestep 53
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.191887
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0206675
+
+Increased time in the simulation to timestep 54
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.226729
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0221252
+
+Increased time in the simulation to timestep 55
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.228398
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.047999
+
+Increased time in the simulation to timestep 56
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.337251
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.210408
+
+Increased time in the simulation to timestep 57
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.218943
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0228539
+
+Increased time in the simulation to timestep 58
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.224639
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.022452
+
+Increased time in the simulation to timestep 59
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.302388
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0230907
+
+Increased time in the simulation to timestep 60
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.207073
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0317206
+
+Increased time in the simulation to timestep 61
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.201825
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0193039
+
+Increased time in the simulation to timestep 62
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.199912
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0293478
+
+Increased time in the simulation to timestep 63
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.191451
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0122208
+
+Increased time in the simulation to timestep 64
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.158482
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0147945
+
+Increased time in the simulation to timestep 65
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.236866
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0465935
+
+Increased time in the simulation to timestep 66
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.230888
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0268843
+
+Increased time in the simulation to timestep 67
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.311553
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0335144
+
+Increased time in the simulation to timestep 68
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.104817
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0164759
+
+Increased time in the simulation to timestep 69
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.327797
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.036004
+
+Increased time in the simulation to timestep 70
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.246624
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0195606
+
+Increased time in the simulation to timestep 71
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.26374
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0178103
+
+Increased time in the simulation to timestep 72
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0542862
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0212265
+
+Increased time in the simulation to timestep 73
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.188575
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0751474
+
+Increased time in the simulation to timestep 74
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.205178
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0599148
+
+Increased time in the simulation to timestep 75
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0905154
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0230593
+
+Increased time in the simulation to timestep 76
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.114366
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0621742
+
+Increased time in the simulation to timestep 77
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.186324
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0122221
+
+Increased time in the simulation to timestep 78
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+The likelihood score for this component on this timestep is 2.66272e+10
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.186839
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.012676
+
+Increased time in the simulation to timestep 79
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+The likelihood score for this component on this timestep is 1.26009e+10
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.204998
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.157033
+
+Increased time in the simulation to timestep 80
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+The likelihood score for this component on this timestep is 4.45436e+10
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0982617
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.187987
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0910801
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 81
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+The likelihood score for this component on this timestep is 209.526
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.185863
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0905056
+
+Increased time in the simulation to timestep 82
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.222863
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.105496
+
+Increased time in the simulation to timestep 83
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.14665
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.100216
+
+Increased time in the simulation to timestep 84
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0222845
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0732701
+
+Increased time in the simulation to timestep 85
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.181494
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+Warning in catchdistribution - zero catch found
+The likelihood score for this component on this timestep is 0.0961165
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0197404
+
+Increased time in the simulation to timestep 86
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.184866
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0140046
+
+Increased time in the simulation to timestep 87
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0955683
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0243786
+
+Increased time in the simulation to timestep 88
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0308955
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.0435305
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0182822
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 89
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.191694
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0113089
+
+Increased time in the simulation to timestep 90
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.173314
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0141356
+
+Increased time in the simulation to timestep 91
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.216106
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0302785
+
+Increased time in the simulation to timestep 92
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0522326
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.0593999
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.011689
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 93
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.198192
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0363288
+
+Increased time in the simulation to timestep 94
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+The likelihood score for this component on this timestep is 8.15978e+09
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.190078
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0236841
+
+Increased time in the simulation to timestep 95
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+The likelihood score for this component on this timestep is 2.25773e+10
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.180916
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0743176
+
+Increased time in the simulation to timestep 96
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.138708
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.182808
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0830467
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 97
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.14758
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0565038
+
+Increased time in the simulation to timestep 98
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.191479
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0253426
+
+Increased time in the simulation to timestep 99
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.167448
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0160054
+
+Increased time in the simulation to timestep 100
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.029604
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.00822858
+
+Increased time in the simulation to timestep 101
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.24188
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.205418
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0145283
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.10622
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 102
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.225156
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0337684
+
+Increased time in the simulation to timestep 103
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.206652
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0229494
+
+Increased time in the simulation to timestep 104
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0249112
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0206068
+
+Increased time in the simulation to timestep 105
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.209515
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.216436
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0128175
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 106
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.319668
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0720434
+
+Increased time in the simulation to timestep 107
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.122164
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0119684
+
+Increased time in the simulation to timestep 108
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.022054
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.00723135
+
+Increased time in the simulation to timestep 109
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.213326
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.262802
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.210783
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.00971934
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.0614017
+Calculating index for surveyindex component pelagonumber.survey
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 110
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.201093
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.00757965
+
+Increased time in the simulation to timestep 111
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.104631
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0336967
+
+Increased time in the simulation to timestep 112
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0520921
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0228182
+
+Increased time in the simulation to timestep 113
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.230541
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.279034
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0191808
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 114
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.195238
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.219875
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.00506857
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.0936134
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 115
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.15713
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0327198
+
+Increased time in the simulation to timestep 116
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0845399
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0385632
+
+Increased time in the simulation to timestep 117
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.192242
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.168856
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0347442
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 118
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.208267
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0620977
+
+Increased time in the simulation to timestep 119
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.164046
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0322288
+
+Increased time in the simulation to timestep 120
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.154272
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0222118
+
+Increased time in the simulation to timestep 121
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.22982
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.175454
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0107239
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 122
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.220668
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.21461
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.00534472
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.0673083
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 123
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.211466
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0120658
+
+Increased time in the simulation to timestep 124
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0447347
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0253911
+
+Increased time in the simulation to timestep 125
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.246663
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.208178
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0395632
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 126
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.260628
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.225931
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0209299
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.0436769
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 127
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.177959
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0207221
+
+Increased time in the simulation to timestep 128
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0751823
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0941206
+
+Increased time in the simulation to timestep 129
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.247243
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0731496
+
+Increased time in the simulation to timestep 130
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.237132
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0352953
+
+Increased time in the simulation to timestep 131
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.164907
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0692627
+
+Increased time in the simulation to timestep 132
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0667182
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.148488
+
+Increased time in the simulation to timestep 133
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.187219
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0491907
+
+Increased time in the simulation to timestep 134
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.202414
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.069342
+
+Increased time in the simulation to timestep 135
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.159806
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0705488
+
+Increased time in the simulation to timestep 136
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.155239
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0374899
+
+Increased time in the simulation to timestep 137
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.227493
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.199998
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0198424
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 138
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.19266
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.157715
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0568124
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.095546
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 139
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.13752
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0483506
+
+Increased time in the simulation to timestep 140
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0527424
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0239052
+
+Increased time in the simulation to timestep 141
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.234955
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.254581
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0273662
+Calculating likelihood score for catchdistribution component aldist.pelago
+The likelihood score for this component on this timestep is 0.0479815
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 142
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.238442
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.232418
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.056719
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.0925754
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 143
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+The likelihood score for this component on this timestep is 1.98856e+11
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.208078
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0649918
+
+Increased time in the simulation to timestep 144
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.251877
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0564124
+
+Increased time in the simulation to timestep 145
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.170334
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.271815
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0120632
+Calculating likelihood score for catchdistribution component aldist.pelago
+The likelihood score for this component on this timestep is 0.0439657
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 146
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.219983
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.194729
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0394089
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.0419757
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 147
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.1888
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0306971
+
+Increased time in the simulation to timestep 148
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0774762
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0221117
+
+Increased time in the simulation to timestep 149
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.236246
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.208492
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0630907
+Calculating likelihood score for catchdistribution component aldist.pelago
+The likelihood score for this component on this timestep is 0.0179937
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 150
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.211995
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.211546
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0145541
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.0971282
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 151
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.238106
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0187912
+
+Increased time in the simulation to timestep 152
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.124715
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0194137
+
+Increased time in the simulation to timestep 153
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.271034
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.196872
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0452879
+Calculating likelihood score for catchdistribution component aldist.pelago
+The likelihood score for this component on this timestep is 0.00635962
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 154
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.238106
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.199286
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0173558
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.0625966
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 155
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.211734
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0364603
+
+Increased time in the simulation to timestep 156
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.2069
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0165621
+
+Increased time in the simulation to timestep 157
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.268081
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.219252
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.056212
+Calculating likelihood score for catchdistribution component aldist.pelago
+The likelihood score for this component on this timestep is 0.0308918
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 158
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.239714
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.245567
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0132664
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.079091
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 159
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.272205
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0261014
+
+Increased time in the simulation to timestep 160
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.19574
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0172941
+
+Increased time in the simulation to timestep 161
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.199825
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.18584
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0443957
+Calculating likelihood score for catchdistribution component aldist.pelago
+The likelihood score for this component on this timestep is 0.017072
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 162
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.228983
+Calculating likelihood score for catchdistribution component ldist.ecocadiz.noage
+The likelihood score for this component on this timestep is 0.22951
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.032796
+Calculating likelihood score for catchdistribution component aldist.ecocadiz
+The likelihood score for this component on this timestep is 0.0724522
+Calculating index for surveyindex component ecocadiz.survey
+
+Increased time in the simulation to timestep 163
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.299136
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.0241771
+
+Increased time in the simulation to timestep 164
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.seine
+The likelihood score for this component on this timestep is 0.0432453
+Calculating likelihood score for catchdistribution component ldist.alkseine
+The likelihood score for this component on this timestep is 0.021781
+
+Increased time in the simulation to timestep 165
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for catchdistribution component ldist.pelago.noage
+The likelihood score for this component on this timestep is 0.21897
+Calculating likelihood score for catchdistribution component aldist.pelago
+The likelihood score for this component on this timestep is 0.027319
+Calculating index for surveyindex component pelagonumber.survey
+
+Increased time in the simulation to timestep 166
+Reset consumption data for prey anch
+Reset stock data for stock anch
+Reset predatation data for predator seine
+Reset predatation data for predator ECO
+Reset predatation data for predator PEL
+Checking understocking likelihood component understocking
+Calculating likelihood score for surveyindex component pelagonumber.survey
+The likelihood score from the regression line for this component is 8.66401
+Calculating likelihood score for surveyindex component ecocadiz.survey
+The likelihood score from the regression line for this component is 5.57597
+
+The simulation has reached the last timestep for the current model run
+
+The current likelihood scores for each component are:
+bounds 0
+understocking 4.51274e+19
+ldist.seine 23.6133
+ldist.pelago.noage 3.63642
+ldist.ecocadiz.noage 2.54739
+ldist.alkseine 4.93842
+aldist.pelago 0.191583
+aldist.ecocadiz 0.913586
+pelagonumber.survey 8.66401
+ecocadiz.survey 5.57597
+
+The current overall likelihood score is 4.51274e+19
+
+Checking to see if file params.out can be opened ... OK
+Opening file params.out
+Closing file params.out
+Closing file lik.out
+
+Total number of warnings was 15
+
+Gadget simulation finished OK - runtime was 1 seconds

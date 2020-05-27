@@ -1,0 +1,142 @@
+; gadget printfile, created in 2020-05-26
+[component]
+type	likelihoodsummaryprinter
+printfile	WGTSall/out.fit/likelihoodsummary
+;
+[component]
+type	likelihoodprinter
+likelihood	aldist.ecocadiz
+printfile	WGTSall/out.fit/aldist.ecocadiz
+;
+[component]
+type	likelihoodprinter
+likelihood	aldist.pelago
+printfile	WGTSall/out.fit/aldist.pelago
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.alkseine
+printfile	WGTSall/out.fit/ldist.alkseine
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.ecocadiz.noage
+printfile	WGTSall/out.fit/ldist.ecocadiz.noage
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.pelago.noage
+printfile	WGTSall/out.fit/ldist.pelago.noage
+;
+[component]
+type	likelihoodprinter
+likelihood	ldist.seine
+printfile	WGTSall/out.fit/ldist.seine
+;
+[component]
+type	likelihoodprinter
+likelihood	ecocadiz.survey
+printfile	WGTSall/out.fit/ecocadiz.survey
+;
+[component]
+type	likelihoodprinter
+likelihood	pelagonumber.survey
+printfile	WGTSall/out.fit/pelagonumber.survey
+;
+[component]
+type	stockstdprinter
+stockname	anch
+printfile	WGTSall/out.fit/anch.std
+printatstart 0
+yearsandsteps	all	1
+[component]
+type	stockstdprinter
+stockname	anch
+printfile	WGTSall/out.fit/anch.std
+printatstart 0
+yearsandsteps	all	2
+[component]
+type	stockstdprinter
+stockname	anch
+printfile	WGTSall/out.fit/anch.std
+printatstart 0
+yearsandsteps	all	3
+[component]
+type	stockstdprinter
+stockname	anch
+printfile	WGTSall/out.fit/anch.std
+printatstart 0
+yearsandsteps	all	4
+[component]
+type	stockprinter
+stocknames	anch
+areaaggfile	WGTSall/print.aggfiles/anch.area.agg
+ageaggfile	WGTSall/print.aggfiles/anch.allages.agg
+lenaggfile	WGTSall/print.aggfiles/anch.len.agg
+printfile	WGTSall/out.fit/anch.full
+printatstart	0
+yearsandsteps	all	1
+[component]
+type	stockprinter
+stocknames	anch
+areaaggfile	WGTSall/print.aggfiles/anch.area.agg
+ageaggfile	WGTSall/print.aggfiles/anch.allages.agg
+lenaggfile	WGTSall/print.aggfiles/anch.len.agg
+printfile	WGTSall/out.fit/anch.full
+printatstart	0
+yearsandsteps	all	2
+[component]
+type	stockprinter
+stocknames	anch
+areaaggfile	WGTSall/print.aggfiles/anch.area.agg
+ageaggfile	WGTSall/print.aggfiles/anch.allages.agg
+lenaggfile	WGTSall/print.aggfiles/anch.len.agg
+printfile	WGTSall/out.fit/anch.full
+printatstart	0
+yearsandsteps	all	3
+[component]
+type	stockprinter
+stocknames	anch
+areaaggfile	WGTSall/print.aggfiles/anch.area.agg
+ageaggfile	WGTSall/print.aggfiles/anch.allages.agg
+lenaggfile	WGTSall/print.aggfiles/anch.len.agg
+printfile	WGTSall/out.fit/anch.full
+printatstart	0
+yearsandsteps	all	4
+[component]
+type	predatorpreyprinter
+predatornames	seine ECO PEL
+preynames	anch
+areaaggfile	WGTSall/print.aggfiles/anch.area.agg
+ageaggfile	WGTSall/print.aggfiles/anch.age.agg
+lenaggfile	WGTSall/print.aggfiles/anch.alllen.agg
+printfile	WGTSall/out.fit/anch.prey
+yearsandsteps	all all
+[component]
+type	predatorpreyprinter
+predatornames	seine
+preynames	anch
+areaaggfile	WGTSall/print.aggfiles/anch.area.agg
+ageaggfile	WGTSall/print.aggfiles/anch.allages.agg
+lenaggfile	WGTSall/print.aggfiles/anch.len.agg
+printfile	WGTSall/out.fit/anch.prey.seine
+yearsandsteps	all all
+[component]
+type	predatorpreyprinter
+predatornames	ECO
+preynames	anch
+areaaggfile	WGTSall/print.aggfiles/anch.area.agg
+ageaggfile	WGTSall/print.aggfiles/anch.allages.agg
+lenaggfile	WGTSall/print.aggfiles/anch.len.agg
+printfile	WGTSall/out.fit/anch.prey.ECO
+yearsandsteps	all all
+[component]
+type	predatorpreyprinter
+predatornames	PEL
+preynames	anch
+areaaggfile	WGTSall/print.aggfiles/anch.area.agg
+ageaggfile	WGTSall/print.aggfiles/anch.allages.agg
+lenaggfile	WGTSall/print.aggfiles/anch.len.agg
+printfile	WGTSall/out.fit/anch.prey.PEL
+yearsandsteps	all all
+;

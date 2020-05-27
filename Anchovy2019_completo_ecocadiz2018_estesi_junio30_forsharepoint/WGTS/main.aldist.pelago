@@ -1,0 +1,13 @@
+; main file for gadget - created in Rgadget
+; WGTS/main.aldist.pelago - Sat May 16 00:26:55 2020
+timefile Modelfiles/time
+areafile Modelfiles/area
+printfiles ; no printfile supplied
+[stock]
+stockfiles Modelfiles/anch
+[tagging]
+[otherfood]
+[fleet]
+fleetfiles Modelfiles/fleet.fleet
+[likelihood]
+likelihoodfiles WGTS/likelihood.aldist.pelago

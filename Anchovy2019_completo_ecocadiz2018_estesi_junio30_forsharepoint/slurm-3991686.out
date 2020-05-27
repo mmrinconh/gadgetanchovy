@@ -1,0 +1,157 @@
+slurmstepd: info: Setting TMPDIR to /scratch/3991686. Previous errors about TMPDIR can be discarded
+binutils/2.31.1 loaded 
+gcc/6.4.0 loaded 
+ 
+imkl/2018.3.222 loaded 
+sed/4.5 loaded 
+bzip2/1.0.6 loaded 
+zlib/1.2.11 loaded 
+pcre/8.42 loaded 
+grep/3.1 loaded 
+ncurses/6.1 loaded 
+libreadline/7.0 loaded 
+gawk/4.2.1 loaded 
+tar/1.30 loaded 
+coreutils/8.30 loaded 
+findutils/4.6.0 loaded 
+gmp/6.1.2 loaded 
+nettle/3.4 loaded 
+expat/2.2.6 loaded 
+libpng/1.6.37 loaded 
+freetype/2.9.1 loaded 
+fontconfig/2.13.1 loaded 
+libgpg-error/1.32 loaded 
+libgcrypt/1.8.3 loaded 
+libxslt/1.1.32 loaded 
+x11/20180604 loaded 
+libdrm/2.4.94 loaded 
+llvm/6.0.1 loaded 
+mesa/18.3.6 loaded 
+libglu/9.0.0 loaded 
+pixman/0.34.0 loaded 
+libffi/3.2.1 loaded 
+xz/5.2.4 loaded 
+libxml2/2.9.7 loaded 
+gettext/0.19.8.1 loaded 
+dbus/1.13.6 loaded 
+util-linux/2.32 loaded 
+glib/2.58.0 loaded 
+cairo/1.14.12 loaded 
+tcl/8.6.8 loaded 
+sqlite/3.24.0 loaded 
+nasm/2.13.03 loaded 
+libjpeg-turbo/2.0.2 loaded 
+libtiff/4.0.10 loaded 
+jdk/8u181 loaded 
+tk/8.6.8 loaded 
+curl/7.61.1 loaded 
+R/3.5.1 loaded 
+gadget/2.2.00-BETA-openmp-81a0926 loaded 
+> #devtools::install_github('hafro/rgadget')
+> library(Rgadget)
+Loading required package: tidyverse
+── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──
+✔ ggplot2 3.1.1     ✔ purrr   0.3.2
+✔ tibble  2.1.1     ✔ dplyr   0.8.1
+✔ tidyr   0.8.3     ✔ stringr 1.4.0
+✔ readr   1.3.1     ✔ forcats 0.4.0
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+> tmp<-callGadget(s=1,main='main',i='params.in',o='lik.out',ignore.stderr=FALSE, log='tmp')
+Warning in area - temperature data doesnt span time range
+Warning in surveyindex - differing timesteps for pelagonumber.survey
+Warning in surveyindex - differing timesteps for ecocadiz.survey
+Warning in keeper - failed to match switch constant
+Warning in keeper - failed to match switch l50
+Warning in keeper - failed to match switch constantecorec
+Warning in keeper - failed to match switch l50ecorec
+Warning in keeper - failed to match switch constantarsa
+Warning in keeper - failed to match switch l50arsa
+Warning in growth calculation - length greater than length infinity
+Warning in catchdistribution - zero catch found
+Warning in catchdistribution - zero catch found
+Warning in catchdistribution - zero catch found
+Warning in catchdistribution - zero catch found
+Warning in catchdistribution - zero catch found
+> lik <- read.gadget.likelihood('likelihood')
+> tmp<-gadget.iterative(params.file = 'params.in',
++                       optinfofile = 'optfile',
++                       wgts = 'WGTS',
++                       rew.sI=TRUE,
++                       cv.floor=0.05,
++                       grouping = list(sind=lik$surveyindices$name, seine = c('ldist.seine','ldist.alkseine')))
+[1] "Running aldist.pelago"
+[1] "Running aldist.ecocadiz"
+[1] "Running ldist.ecocadiz.noage"
+[1] "Running ldist.pelago.noage"
+[1] "Comp aldist.pelago completed"
+[1] "Comp aldist.ecocadiz completed"
+[1] "Comp ldist.pelago.noage completed"
+[1] "Running pelagonumber.survey.ecocadiz.survey"
+[1] "Comp ldist.ecocadiz.noage completed"
+[1] "Running ldist.seine.ldist.alkseine"
+[1] "Comp pelagonumber.survey.ecocadiz.survey completed"
+[1] "Comp ldist.seine.ldist.alkseine completed"
+Joining by: comp
+[1] "Running nodf"
+[1] "Running final"
+[1] "Comp nodf completed"
+[1] "Comp final completed"
+> fit<-gadget.fit(wgts = "WGTS", printfile.printatstart = 0, printfile.steps = 2)
+Joining, by = c("stock", "year", "step", "length")
+Joining, by = c("stock", "year", "area")
+There were 15 warnings (use warnings() to see them)
+> #fit<-gadget.fit(wgts = "WGTS")
+> st <- Rgadget:::read.gadget.stockfiles('Modelfiles/anch')
+> params <- read.gadget.parameters('WGTS/params.final')
+> rec <- Rgadget:::get.gadget.recruitment(st,params,collapse=FALSE)
+> SS<-read.gadget.lik.out('WGTS/lik.final')
+> lik <- read.gadget.likelihood('likelihood')
+> lik.data<-read.gadget.data(lik)
+> save(params,rec,st,lik.data,SS,file="Output.Rdata")
+> source("gadget_fit4_2step_2019.r")
+Joining, by = c("stock", "year", "step", "length")
+Joining, by = c("stock", "year", "area")
+There were 16 warnings (use warnings() to see them)
+> 
+> #############################################################################33
+> setwd("WGTS")
+> 
+> Files2copy<-list.files()
+> list.files<-Files2copy[1:(length(Files2copy)-1)]
+> 
+> dir.create("../WGTS1")
+> file.copy(from=list.files, to = "../WGTS1")
+ [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+[13]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+[25]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+[37]  TRUE  TRUE FALSE  TRUE  TRUE
+> 
+> setwd("..")
+> fit1 <- gadget.fit(wgts = 'WGTS1', printfile.printatstart = 0, printfile.steps = 1)
+Joining, by = c("stock", "year", "step", "length")
+Joining, by = c("stock", "year", "area")
+There were 15 warnings (use warnings() to see them)
+> 
+> setwd("WGTS")
+> 
+> Files2copy<-list.files()
+> list.files<-Files2copy[1:(length(Files2copy)-1)]
+> 
+> dir.create("../WGTSall")
+> file.copy(from=list.files, to = "../WGTSall")
+ [1]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+[13]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+[25]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+[37]  TRUE  TRUE FALSE  TRUE  TRUE
+> 
+> setwd("..")
+> fitall <- gadget.fit(wgts = 'WGTSall', printfile.printatstart = 0, printfile.steps = c(1,2,3,4))
+Error: '' does not exist in current working directory ('/mnt/netapp1/Store_CSIC/home/csic/mdp/mrh/GADGET_backup/assessment2019/Anchovy2019_completo_ecocadiz2018_estesi_junio30_prueba2020_conecocadizcorregida').
+In addition: Warning messages:
+1: In system(run.string, intern = TRUE, ignore.stderr = ignore.stderr) :
+  running command 'gadget  -s    -i WGTSall/params.final  -main WGTSall/main.print   -o WGTSall/SS.print       2>/dev/null' had status 1
+2: In .f(.x[[i]], ...) :
+  Old style printfile detected, update Gadget to the most recent version
+Execution halted

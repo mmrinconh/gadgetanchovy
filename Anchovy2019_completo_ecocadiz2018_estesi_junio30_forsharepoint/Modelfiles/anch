@@ -1,0 +1,91 @@
+;
+; anchovy stock file for this anchovy model
+;
+stockname       anch
+livesonareas    1
+minage          0
+maxage          3
+minlength      3  ; 10
+maxlength      22; 20
+dl              0.5
+refweightfile   Modelfiles/anch.refweights
+;
+; the growth and consumption can be calculated on a finer scale
+; so the length groups for this are specified here
+;
+growthandeatlengths   Aggfiles/catchdistribution.ldist.seine.len.agg
+;
+; information about the growth of the stock
+;
+doesgrow              1
+growthfunction        lengthvbsimple
+growthparameters      #Linf  #kappa #alpha #beta
+
+
+;Kappa is 0.89/12 because timestep is quarters
+
+;
+; the parameters required for this growth function are
+;
+
+;wgrowthparameters     #grq0  0  #grq2  #grq2  0.666  1
+;lgrowthparameters     1  0  0  1  2.2  1.4  8.85e-6  3.0257  0
+;
+beta                  #bbeta
+maxlengthgroupgrowth  5
+;
+; information about the natural mortality of the stock
+; age             0   1    2   3   from Alboran Sea GFCM 2009 annual mortality
+;naturalmortality  1.17 0.43 0.32 0.27 annual
+; quaterly
+;naturalmortality  1.17 0.43 0.8 1.0 ;annual, at the end is higher than it was to force to die the oldest
+;naturalmortality  1.2 0.8 1.2 1.2 
+;naturalmortality 2.89 2.21 1.39 1.32
+naturalmortality 2.21 1.3 1.3 1.3
+;
+; information about the stock acting as a prey
+;
+iseaten           1 ; the fleet is considered a predator
+preylengths       Aggfiles/catchdistribution.ldist.seine.len.agg          ;len.agg       ;catchdistribution.ldist.seine.len.agg
+energycontent     1
+;
+; information about the stock acting as a predator
+;
+doeseat           0
+;
+; information about the initial conditions of the stock
+;
+initialconditions
+minage            0
+maxage            3
+minlength        3 ; 10
+maxlength         20
+;numberfile	Modelfiles/anch.agelengthweight
+normalcondfile    Initfiles/anch.init
+;
+; information about the migration of the stock
+;
+doesmigrate       0
+;
+; information about the maturation of the stock
+;
+doesmature        0
+;
+; information about the movement of the stock
+;
+doesmove          0
+;
+; information about the recruitment to the stock
+;
+doesrenew         1
+minlength         3  ; to include the first years 
+maxlength         15
+normalcondfile   Initfiles/anch.rec
+;
+; information about the spawning of the stock
+;
+doesspawn         0
+;
+; information about the straying of the stock
+;
+doesstray         0

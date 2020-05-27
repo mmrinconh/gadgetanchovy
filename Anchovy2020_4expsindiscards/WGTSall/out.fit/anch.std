@@ -1,0 +1,4 @@
+; Gadget version 2.2.00-BETA running on c0910 Tue May 26 23:40:11 2020
+; Standard output file for the stock anch
+; Printing the following information at the end of each timestep
+; year-step-area-age-number-mean length-mean weight-stddev length-number consumed-biomass consumed

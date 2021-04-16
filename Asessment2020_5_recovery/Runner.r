@@ -1,4 +1,6 @@
 #devtools::install_github('hafro/rgadget')
+install.packages('devtools')
+devtools::install_github('hafro/rgadget', ref = '0949c54')
 library(Rgadget)
 tmp<-callGadget(s=1,main='main',i='params.in',o='lik.out',ignore.stderr=FALSE, log='tmp')
 lik <- read.gadget.likelihood('likelihood')
